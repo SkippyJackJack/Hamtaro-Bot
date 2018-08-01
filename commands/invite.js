@@ -1,8 +1,3 @@
-exports.run {
-  name: 'invite',
-  description: 'Displays link to invite the bot to your discord server',
-  args: 'false',
-  execute(message) {
+exports.run (client, message, args) => {
     message.channel.send(process.env.INVITE);
-    },
 };
