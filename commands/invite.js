@@ -1,3 +1,3 @@
 exports.run (client, message, args) => {
-    message.channel.send(process.env.INVITE);
+    message.reply(process.env.INVITE);
 }
