@@ -1,4 +1,4 @@
-module.exports {
+exports.run {
   name: 'invite',
   description: 'Displays link to invite the bot to your discord server',
   args: 'false',
