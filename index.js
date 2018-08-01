@@ -4,37 +4,35 @@ const Enmap = require("enmap");
 const fs = require("fs");
 
 const client = new Discord.Client();
-const { prefix, modsrole } = require("./config.json");
+const config = require("./config.json");
 
-client.commands = new Discord.Collection();
-
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
-}
+client.config = config;
 
 client.on('ready', () => {
     // Log to Heroku console
     console.log("---> STATUS: Butler-Bot Online <---");
 });
 
-client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, event.bind(null, client));
+  });
+});
 
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
+client.commands = new Enmap();
 
-	if (!client.commands.has(command)) return;
-
-	try {
-		client.commands.get(command).execute(message, args);
-	}
-	catch (error) {
-		console.error(error);
-		message.reply('Sorry, but there was an error trying to execute that command.');
-	}
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    let commandName = file.split(".")[0];
+    console.log(`Loading command ${commandName}...`);
+    client.commands.set(commandName, props);
+  });
 });
 
 client.login(process.env.TOKEN);
