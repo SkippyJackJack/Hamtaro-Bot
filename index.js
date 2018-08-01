@@ -6,8 +6,6 @@ const fs = require("fs");
 const client = new Discord.Client();
 const config = require("./config.json");
 
-client.config = config;
-
 client.on('ready', () => {
     // Log to Heroku console
     console.log("---> STATUS: Butler-Bot Online <---");
