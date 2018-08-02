@@ -20,5 +20,6 @@ exports.run = (client, message, args) => {
 		    value: "${message.guild.owner}"
 		}	
 	    ],	
-	}						
-   });
+	 }
+     }
+});
