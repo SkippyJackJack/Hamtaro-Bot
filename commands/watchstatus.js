@@ -1,4 +1,4 @@
 exports.run = (client, message, args) => {
-   let newWatchStatus = message.content.split(" ").slice(1, 2)[0];
+   let newWatchStatus = args.slice(1).join(" ");
    client.user.setActivity('' + newWatchStatus, {type: 'WATCHING'}); 
 }
