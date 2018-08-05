@@ -35,8 +35,8 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-client.on("message", function(message) {
-  if (message.content.startsWith("welcome")) {
+client.on("message", (message) => {
+  if (message.content.startsWith("?welcome")) {
    client.emit("guildMemberAdd", message.member);
   }
 });
