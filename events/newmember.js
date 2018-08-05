@@ -1,7 +1,7 @@
-exports.run = (client, message, args) => {
+exports.run = (client, member) => {
     client.on('guildMemberAdd', member => {
-    const newMember = member.guild.channels.find('name', 'welcome-channel');
+    const member = member.guild.channels.find('name', 'welcome-channel');
     if (!channel) return console.log("welcome-channel not found.");
-    channel.send(`Greetings, ${newMember}. Welcome to the server!`);
+    channel.send(`Greetings, ${member}. Welcome to the server!`);
  })
 };
