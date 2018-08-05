@@ -1,4 +1,4 @@
-exports.run = (client, member) => {
+module.exports = (client, member) => {
     client.on('guildMemberAdd', member => {
     const newMember = member.guild.channels.find('name', 'welcome-channel');
     if (!channel) return console.log("welcome-channel not found.");
