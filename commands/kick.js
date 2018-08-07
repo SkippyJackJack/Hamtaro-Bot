@@ -7,6 +7,5 @@ exports.run = (client, message, [mention, ...reason]) => {
 
   kickMember.kick(reason.join(" ")).then(member => {
     message.guild.channels.find("name", client.config.welcome-channel).send("Successfully kicked user");
-);
-  });
+  })
 };
