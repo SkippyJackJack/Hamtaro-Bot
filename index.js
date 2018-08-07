@@ -11,7 +11,7 @@ client.config = config;
 client.on('ready', () => {
     // Log to Heroku console
     console.log("---> STATUS: Butler-Bot Online <---");
-    client.user.setActivity("for messages" {type: 'WATCHING'}); 
+    client.user.setActivity("for messages", {type: 'WATCHING'}); 
 });
 
 fs.readdir("./events/", (err, files) => {
