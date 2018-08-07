@@ -9,3 +9,16 @@ exports.run = (client, message, [mention, ...reason]) => {
     message.guild.channels.find("name", client.config.welcome-channel).send("Successfully kicked user");
   })
 };
+
+exports.conf {
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    permLevel: 0
+};
+
+exports.help {
+    name: 'kick',
+    description: 'Kicks a player from the server. Requires mention of user to kick.'
+    usage: 'kick @NaughtyMember'
+};
