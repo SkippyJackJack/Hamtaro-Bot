@@ -1,1 +1,2 @@
-# NodeJS-ButlerBot
+# Hamtoro-Bot
+Author: High-Fox
