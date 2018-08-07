@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-require("./util/eventloader.js");
+require("./util/eventloader.js")(client);
 client.config = config;
 
 client.on('ready', () => {
@@ -14,26 +14,39 @@ client.on('ready', () => {
     client.user.setActivity("for messages", {type: 'WATCHING'}); 
 });
 
-fs.readdir("./events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    const event = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
-    client.on(eventName, event.bind(null, client));
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+fs.readdir('./commands/', (err, files) => {
+  if (err) console.error(err);
+  log(`Loading a total of ${files.length} commands.`);
+  files.forEach(f => {
+    let props = require(`./commands/${f}`);
+    log(`Loading Command: ${props.help.name}. 👌`);
+    client.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, props.help.name);
+    });
   });
 });
 
-client.commands = new Enmap();
-
-fs.readdir("./commands/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    if (!file.endsWith(".js")) return;
-    let props = require(`./commands/${file}`);
-    let commandName = file.split(".")[0];
-    console.log(`Loading command ${commandName}...`);
-    client.commands.set(commandName, props);
+client.reload = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      delete require.cache[require.resolve(`./commands/${command}`)];
+      let cmd = require(`./commands/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if (cmd === command) client.aliases.delete(alias);
+      });
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      resolve();
+    } catch (e){
+      reject(e);
+    }
   });
-});
+};
 
 client.login(process.env.TOKEN);
