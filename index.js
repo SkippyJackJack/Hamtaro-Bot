@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-
+require("./util/eventloader.js");
 client.config = config;
 
 client.on('ready', () => {
