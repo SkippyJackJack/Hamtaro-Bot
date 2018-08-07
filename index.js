@@ -11,6 +11,7 @@ client.config = config;
 client.on('ready', () => {
     // Log to Heroku console
     console.log("---> STATUS: Butler-Bot Online <---");
+    client.user.setActivity('for messages' {type: 'WATCHING'}); 
 });
 
 fs.readdir("./events/", (err, files) => {
@@ -33,12 +34,6 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`Loading command ${commandName}...`);
     client.commands.set(commandName, props);
   });
-});
-
-client.on("message", (message) => {
-  if (message.content.startsWith("welcome")) {
-   client.emit("guildMemberAdd", message.member);
-  }
 });
 
 client.login(process.env.TOKEN);

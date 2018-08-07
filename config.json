@@ -1,3 +1,8 @@
 {
-  "prefix": "?"
+  "prefix": "?",
+  "invite-link": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
+  "announce-bans": "true",
+  "announceBans-channel": "general",
+  "welcome-new-members": "true",
+  "welcome-channel": "welcome-channel"
 }
