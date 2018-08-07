@@ -1,5 +1,4 @@
 module.exports = (guild, user) => {
-	client.on("guildBanAdd", member => {
 	
 	if (client.config.announce-bans == "false")
 		return;
@@ -8,5 +7,4 @@ module.exports = (guild, user) => {
 	
 	if (!channel) return console.log("announceBans-channel not found");
 		channel.send(`${user} was just banned form the server. Ba-Bye!`);
-  })
 };
