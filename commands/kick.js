@@ -20,5 +20,5 @@ exports.conf {
 exports.help {
     name: 'kick',
     description: 'Kicks a player from the server. Requires mention of user to kick.'
-    usage: 'kick @NaughtyMember'
+    usage: 'kick [mention of player to kick]'
 };
