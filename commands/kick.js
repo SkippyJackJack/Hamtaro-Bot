@@ -10,14 +10,14 @@ exports.run = (client, message, [mention, ...reason]) => {
   })
 };
 
-exports.conf {
+exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: [],
     permLevel: 0
 };
 
-exports.help {
+exports.help = {
     name: 'kick',
     description: 'Kicks a player from the server. Requires mention of user to kick.'
     usage: 'kick [mention of player to kick]'
