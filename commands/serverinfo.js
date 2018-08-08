@@ -23,3 +23,16 @@ exports.run = (client, message, args) => {
       }
    })
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['serverinf'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'ping',
+  description: 'Displays information about the current server.',
+  usage: 'serverinfo'
+};
