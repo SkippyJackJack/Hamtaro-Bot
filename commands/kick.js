@@ -1,3 +1,4 @@
+const config = require('../config.json');
 exports.run = (client, message, [mention, ...reason]) => {
 	
   if (!message.author.hasPermission("KICK_MEMBERS"))
@@ -6,7 +7,7 @@ exports.run = (client, message, [mention, ...reason]) => {
   const kickMember = message.mentions.members.first();
 
   kickMember.kick(reason.join(" ")).then(member => {
-    message.guild.channels.find("name", client.config.welcome-channel).send("Successfully kicked user");
+    message.guild.channels.find("name", config.welcome-channel).send("Successfully kicked user");
   })
 };
 
