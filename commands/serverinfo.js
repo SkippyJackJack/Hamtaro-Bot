@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 		  name: client.user.username,
       		  icon_url: client.user.avatarURL
 		},
-		title: `**Info for ${message.guild.name}**`,
+		title: `${client.guild.iconURL} **Info for ${message.guild.name}**`,
 		description: "Here is some information about the current server.",
 		fields: [{
 		    name: "**Members**",
