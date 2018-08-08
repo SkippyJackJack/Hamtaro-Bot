@@ -20,6 +20,6 @@ exports.conf = {
 
 exports.help = {
     name: 'kick',
-    description: 'Kicks a player from the server. Requires mention of user to kick.'
-    usage: 'kick [mention of player to kick]'
+    description: 'Kicks a player from the server.',
+    usage: 'kick [mention]'
 };
