@@ -32,7 +32,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'ping',
+  name: 'serverinfo',
   description: 'Displays information about the current server.',
   usage: 'serverinfo'
 };
