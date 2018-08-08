@@ -12,6 +12,6 @@ exports.conf = {
 
 exports.help ={
     name: 'invite',
-    description: 'Displays a link that will allow you to invite me to your server!'
+    description: 'Displays a link that will allow you to invite me to your server!',
     usage: 'invite'
 };
