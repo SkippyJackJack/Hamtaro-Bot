@@ -9,8 +9,13 @@ module.exports = (client, message) => {
   const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  // Grab the command data from the client.commands Enmap
-  const cmd = client.commands.get(command);
+  // Grab the command data from the client.commands Discord collection
+  let cmd;
+  if (client.commands.has(command)) {
+    cmd = client.commands.get(command);
+  } else if (client.aliases.has(command)) {
+    cmd = client.commands.get(client.aliases.get(command));
+  }
 
   // If that command doesn't exist, exit and do nothing
   if (!cmd)
