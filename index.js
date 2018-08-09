@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 const Enmap = require("enmap");
 const fs = require("fs");
 const moment = require("moment");
-const canvas = require("canvas");
 
 const client = new Discord.Client();
 const config = require("./config.json");
