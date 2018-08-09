@@ -1,5 +1,4 @@
 module.exports = (client, message) => {
-  const client = message.client
   // Ignore all bots
   if (message.author.bot) return;
 
@@ -7,8 +6,8 @@ module.exports = (client, message) => {
   if (message.content.indexOf(client.config.prefix) !== 0) return;
 
   // Standard argument/command name definition.
-  const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+  const args = message.content.split(' ').slice(1);
+  const command = message.content.split(' ')[0].slice(client.config.prefix.length);
 
   // Grab the command data from the client.commands Discord collection
   let cmd;
