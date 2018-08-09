@@ -6,10 +6,8 @@ const moment = require("moment");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-require("./util/eventloader.js")(client);
 
 client.config = config;
-
 
 client.on('ready', () => {
     // Log to Heroku console
