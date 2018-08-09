@@ -32,24 +32,13 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
-client.reload = command => {
-  return new Promise((resolve, reject) => {
-    try {
-      delete require.cache[require.resolve(`./commands/${command}`)];
-      let cmd = require(`./commands/${command}`);
-      client.commands.delete(command);
-      client.aliases.forEach((cmd, alias) => {
-        if (cmd === command) client.aliases.delete(alias);
-      });
-      client.commands.set(command, cmd);
-      cmd.conf.aliases.forEach(alias => {
-        client.aliases.set(alias, cmd.help.name);
-      });
-      resolve();
-    } catch (e){
-      reject(e);
-    }
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, event.bind(null, client));
   });
-};
+});
 
 client.login(process.env.TOKEN);
