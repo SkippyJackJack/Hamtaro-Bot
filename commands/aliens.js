@@ -1,4 +1,3 @@
-const Canvas = require("canvas");
 exports.run = async (client, message, args) => {
 
 const canvas = Canvas.createCanvas(500,436);
