@@ -14,12 +14,12 @@ message.channel.send(`Welcome to the server, ${member}!`, attachment);
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['aliensmeme'],
+  aliases: [],
   permLevel: "0"
 };
 
 exports.help = {
   name: "aliens",
-  description: "Make your own \"Aliens\" meme.",
+  description: "Make your own \'Aliens\' meme.",
   usage: "aliens [text]"
 };
