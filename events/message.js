@@ -10,7 +10,7 @@ module.exports = (client, message) => {
   const command = args.shift().toLowerCase();
 
   // Grab the command data from the client.commands Enmap
-  const cmd;
+  let cmd;
   if (message.client.commands.has(command)) {
     cmd = message.client.commands.get(command);
   } else if (message.client.aliases.has(command)) {
