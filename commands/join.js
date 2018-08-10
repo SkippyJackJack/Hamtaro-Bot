@@ -1,5 +1,5 @@
 exports.run = async (client, message, args) => {
-        client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
+        client.emit('guildMemberAdd', message.member;)
 };
 
 exports.conf = {
