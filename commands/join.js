@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
         client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
-}
+};
 
 exports.conf = {
   enabled: true,
