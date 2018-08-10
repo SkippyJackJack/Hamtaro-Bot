@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = (client, message, args) => {
         client.emit('guildMemberAdd', message.member);
 };
 
