@@ -1,5 +1,5 @@
 const Canvas = require("canvas");
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
 
 const canvas = Canvas.createcanvas(500,436);
 const background = await Canvas.loadImage('../images/aliens.jpg');
