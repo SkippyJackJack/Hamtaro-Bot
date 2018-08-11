@@ -11,6 +11,6 @@ exports.conf = {
 
 exports.help = {
   name: 'join',
-  description: 'Activates the \'guildMemberAdd\' event.',
+  description: 'Activates the guildMemberAdd event.',
   usage: 'join'
 };
