@@ -1,6 +1,6 @@
 module.exports = (client, message, member) => { 
     
-    if (client.config.welcome-newMembers == "false") return;
+    if (client.config.welcomeNewMembers == "false") return;
         
     const channel = message.guild.channels.find('name', client.config.welcome-channel);
     
