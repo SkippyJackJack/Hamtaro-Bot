@@ -7,9 +7,6 @@
     "node": "8.x",
     "npm": "*"
   },
-  "scripts": {
-    "start": "node index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/High-Fox/Hamtoro-Bot.git"
