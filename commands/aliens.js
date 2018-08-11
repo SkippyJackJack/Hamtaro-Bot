@@ -1,12 +1,14 @@
 exports.run = async (client, message, args) => {
 
-const canvas = Canvas.createCanvas(500,436);
-const background = await Canvas.loadImage('../images/aliens.jpg');
+   const canvas = Canvas.createCanvas(700, 250);
+   const ctx = canvas.getContext('2d');
+   const background = await Canvas.loadImage('../images/aliens.jpg');
+  
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  
+    const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
 
-ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-const attachment = new Discord.Attachment(canvas.toBuffer(), 'aliens.jpg');
-
-message.channel.send(`Here:`, attachment);
+    channel.send(`Special delivery for $(message.author.user)!`, attachment);
 
 };
 
@@ -18,7 +20,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "aliens",
+  name: "\'Aliens\'",
   description: "Make your own \'Aliens\' meme.",
   usage: "aliens [text]"
 };
