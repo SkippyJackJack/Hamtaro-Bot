@@ -4,5 +4,5 @@
   "announce-bans": "true",
   "announceBans-channel": "general",
   "welcome-new-members": "true",
-  "welcome-channel": "welcome-channel"
+  "welcome-channel": "general"
 }
