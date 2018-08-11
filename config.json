@@ -3,17 +3,9 @@
   "prefix": "?",
   "invite-link": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
   
-  // Will the bot send an anouncement whenever a user is banned?
-  // NOTE: Also determines whether the bot will send an announcement when a user is un-banned.
   "announceBans": "true",
-  
-  // Channel to send Ban/Un-Ban announcements to:
   "announceBansChannel": "general",
   
-  // Will the bot send a welcome message whenever a new member joins the server?.
-  // NOTE: Also determines whether the bot will send an announcement when a user leave the server.
   "welcomeNewMembers": "true",
-  
-  // Channel to send Welcome/Goodbye messages to:
   "welcomeChannel": "general"
 }
