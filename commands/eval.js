@@ -3,6 +3,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   if (message.author.id !== client.config.ownerID) return;
   
   const code = args.join(" ");
+  client.wait = require("util").promisify(setTimeout);
   
   try {
     const evaled = eval(code);
