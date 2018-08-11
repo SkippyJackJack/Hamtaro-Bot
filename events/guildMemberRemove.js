@@ -1,10 +1,11 @@
-module.exports = (guild, user) => {
+module.exports = (client, message, guild, user) => {
 	
-	if (client.config.announce-bans == "false")
+	if (client.config.welcome-new-members == "false")
 		return;
 		
-	const channel = member.guild.channel.find('name', client.config.announceBans-channel)
+	const channel = message.guild.channels.find('name', client.config.announceBans-channel)
 	
-	if (!channel) return console.log("announceBans-channel not found");
-		channel.send(`${user} was just un-banned form the server. Welcome back! Don't make the same mistake you were banned for.`);
+	if (!channel) return console.log("welcome-channel not found");
+	
+	channel.send(`${user} was just removed form the server. Bye!`);
 };
