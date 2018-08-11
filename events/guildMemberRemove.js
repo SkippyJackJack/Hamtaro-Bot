@@ -1,6 +1,6 @@
 module.exports = (client, message, guild, user) => {
 	
-	if (client.config.welcome-new-members == "false")
+	if (client.config.welcome-newMembers == "false")
 		return;
 		
 	const channel = message.guild.channels.find('name', client.config.announceBans-channel)
