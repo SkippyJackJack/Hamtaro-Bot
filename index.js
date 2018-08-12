@@ -41,6 +41,4 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
-
-
 client.login(process.env.TOKEN);
