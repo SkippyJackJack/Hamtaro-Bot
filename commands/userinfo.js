@@ -1,11 +1,11 @@
 exports.run = (client, message, args) => {
-	message.channel.send(`**Your username:** ${message.author.username}\n**Your ID:** ${message.author.id}`);
+	message.channel.send(`Info for ${message.author.username}:\n**ID:** ${message.author.id}\n**Created on:** ${message.author.createdTimestamp}\n **Avatar:** ${message.author.avatarURL}`);
 }
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['userinf'],
   permLevel: 0
 };
 
