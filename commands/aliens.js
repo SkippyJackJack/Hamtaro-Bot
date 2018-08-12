@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
    const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
 
    channel.send(`Here:`, attachment);
-});
+};
 
 exports.conf = {
   enabled: true,
