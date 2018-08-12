@@ -21,7 +21,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "\'Aliens\'",
+  name: "Aliens",
   description: "Make your own \'Aliens\' meme.",
   usage: "aliens [text]"
 };
