@@ -18,7 +18,7 @@ module.exports = (client, message) => {
   }
 
   // If that command doesn't exist, silently exit and do nothing
-  if (!cmd) return;
+  if (!cmd) return message.channel.send("I-I don't recognise that command!");
 
   // Run the command
   cmd.run(client, message, args);
