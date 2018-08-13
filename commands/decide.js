@@ -30,7 +30,7 @@ exports.run = (client, message, args) => {
   });
   
   exports.conf = {
-    "name": "decide",
+    "enabled": "true",
     "guildOnly": "false",
     "aliases": [],
     "permLevel": "0"
