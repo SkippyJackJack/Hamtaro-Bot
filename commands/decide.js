@@ -27,7 +27,8 @@ exports.run = (client, message, args) => {
     setTimeout(thinking2, 300)
     setTimeout(thinking3, 300)
     setTimeout(sendResponse, 500)
-  });
+   })
+};
   
   exports.conf = {
     "enabled": "true",
