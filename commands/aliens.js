@@ -22,7 +22,8 @@ exports.run = async (client, message, args) => {
       ctx.drawImage(image, 50, 0, 70, 70)
  
   console.log('<img src="' + canvas.toDataURL() + '" />')
-});
+ })
+};
 
 exports.conf = {
   enabled: true,
