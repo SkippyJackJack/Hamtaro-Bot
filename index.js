@@ -6,7 +6,6 @@ const { promisify } = require("util");
 const moment = require("moment");
 const pify = require("pify");
 const Canvas = require("canvas");
-const image-size = require("image-size");
 
 const client = new Discord.Client();
 const config = require("./config.json");
