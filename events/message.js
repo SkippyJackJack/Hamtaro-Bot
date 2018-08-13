@@ -11,10 +11,10 @@ module.exports = (client, message) => {
 
   // Grab the command data from the client.commands Enmap
   let cmd;
-  if (message.client.commands.has(command)) {
-    cmd = message.client.commands.get(command);
-  } else if (message.client.aliases.has(command)) {
-    cmd = message.client.commands.get(message.client.aliases.get(command));
+  if (client.commands.has(command)) {
+    cmd = client.commands.get(command);
+  } else if (client.aliases.has(command)) {
+    cmd = client.commands.get(message.client.aliases.get(command));
   }
 
   // If that command doesn't exist, silently exit and do nothing
