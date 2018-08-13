@@ -1,8 +1,8 @@
 exports.run = (client, message, args) => {
 
   const decideResponse = [
-    'Yes',
-    'No',
+    'Yes, you should',
+    'No, you shouldn\'t',
     'Probably',
     'Probably not'
   ];
