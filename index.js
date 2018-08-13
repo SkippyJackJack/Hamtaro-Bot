@@ -4,7 +4,6 @@ const Enmap = require("enmap");
 const fs = require("fs");
 const { promisify } = require("util");
 const moment = require("moment");
-const Canvas = require("canvas");
 
 const client = new Discord.Client();
 const config = require("./config.json");
