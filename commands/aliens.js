@@ -1,17 +1,28 @@
 exports.run = async (client, message, args) => {
 
-   const canvas = Canvas.createCanvas(700, 250);
-   const ctx = canvas.getContext('2d');
-
-  // Since the image takes time to load, you should await it
-   const background = await Canvas.loadImage('./wallpaper.jpg');
-  // This uses the canvas dimensions to stretch the image onto the entire canvas
-   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  // Use helpful Attachment class structure to process the file for you
-   const attachment = new Discord.Attachment(canvas.toBuffer(), 'welcome-image.png');
-
-   channel.send(`Here:`, attachment);
-};
+   const { createCanvas, loadImage } = require('canvas')
+   const canvas = createCanvas(200, 200)
+   const ctx = canvas.getContext('2d')
+ 
+   // Write "Awesome!"
+   ctx.font = '30px Impact'
+   ctx.rotate(0.1)
+   ctx.fillText('Awesome!', 50, 100)
+ 
+   // Draw line under text
+   var text = ctx.measureText('Awesome!')
+   ctx.strokeStyle = 'rgba(0,0,0,0.5)'
+   ctx.beginPath()
+   ctx.lineTo(50, 102)
+   ctx.lineTo(50 + text.width, 102)
+   ctx.stroke()
+ 
+   // Draw cat with lime helmet
+   loadImage('../images/aliens.jpg').then((image) => {
+      ctx.drawImage(image, 50, 0, 70, 70)
+ 
+  console.log('<img src="' + canvas.toDataURL() + '" />')
+});
 
 exports.conf = {
   enabled: true,
@@ -21,7 +32,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "Aliens",
+  name: "aliens",
   description: "Make your own \'Aliens\' meme.",
   usage: "aliens [text]"
 };
