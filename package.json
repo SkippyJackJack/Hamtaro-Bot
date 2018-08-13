@@ -4,8 +4,11 @@
   "description": "Hamtoro Bot!",
   "main": "index.js",
   "engines": {
-    "node": "8.x",
+    "node": ">=6",
     "npm": "*"
+  },
+  "scripts": {
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,6 @@
     "moment": "^2.20.1",
     "moment-duration-format": "^2.2.0",
     "ms": "^0.7.3",
-    "canvas": "*"
+    "canvas": "2.0.0"
   }
 }
