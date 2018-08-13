@@ -1,9 +1,9 @@
 exports.run = async (client, message, args) => {
 
-import {createWriteStream} from 'fs'
+import { createWriteStream } from 'fs'
 import pify from 'pify'
 import imageSizeOf from 'image-size'
-import {createCanvas, loadImage, Image} from 'canvas'
+import { createCanvas, loadImage, Image } from 'canvas'
 
 const imageSizeOfP = pify(imageSizeOf)
 
