@@ -14,7 +14,7 @@ client.config = config;
 client.on('ready', () => {
     // Log to Heroku console
     console.log("---> STATUS: Butler-Bot Online <---");
-    client.user.setActivity("for messages", {type: 'WATCHING'}); 
+    client.user.setActivity(config.prefix + "help", {type: 'WATCHING'}); 
 });
 
 fs.readdir("./events/", (err, files) => {
@@ -33,7 +33,7 @@ fs.readdir('./commands/', (err, files) => {
   console.log(`Loading a total of ${files.length} commands.`);
   files.forEach(f => {
     let props = require(`./commands/${f}`);
-    console.log(`Loading Command: ${props.help.name}...`);
+    console.log(`Loading Command: ${props.help.name}`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
