@@ -8,27 +8,13 @@ exports.run = (client, message, args) => {
   ];
     var randomResponse = Math.floor(Math.random()*decideResponse.length);
     
-    function thinking1() {
-      sentMessage.edit("Thinking.");
-    }
-    function thinking2() {
-      sentMessage.edit("Thinking..");
-    }
-    function thinking3() {
-      sentMessage.edit("Thinking...");
-    }
-    function sendResponse() {
-      sentMessage.edit(randomResponse);
-    }
-    
-    
-  message.channel.send("Thinking").then((sentMessage) => {
-    setTimeout(thinking1, 300)
-    setTimeout(thinking2, 300)
-    setTimeout(thinking3, 300)
-    setTimeout(sendResponse, 500)
-   })
-};
+  message.channel.send(randomResponse);
+    // TO DO: Create 'Thinking...' event.
+    // .then(sentMessage => sentMessage.edit("Thinking."))
+    // .then(sentMessage => sentMessage.edit("Thinking.."))
+    // .then(sentMessage => sentMessage.edit("Thinking..."))
+    // .then(sentMessage => sentMessage.edit(randomResponse));
+ };
   
   exports.conf = {
     "enabled": "true",
