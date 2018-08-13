@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     'Probably',
     'Probably not'
   ];
-    var randomResponse = Math.floor(Math.random()*response.length);
+    var randomResponse = Math.floor(Math.random()*decideResponse.length);
     
     function thinking1() {
       sentMessage.edit("Thinking.");
