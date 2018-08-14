@@ -17,7 +17,7 @@ const Jimp = require('jimp');
           message.channel.send({
                             files: [{
                                 attachment: outputfile,
-                                name: output.jpg
+                                name: "output.jpg"
                             }]
                         }).then(function () {
             fs.unlink(outputfile);
