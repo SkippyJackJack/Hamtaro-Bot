@@ -4,8 +4,6 @@ const Jimp = require('jimp');
 
     let text = args.slice(1).join(" ");
     let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
-    
-    message.channel.startTyping()
    
     Jimp.read(image).then(function (image) {
 
@@ -23,7 +21,6 @@ const Jimp = require('jimp');
                             }]
                         }).then(function () {
             fs.unlink(outputfile);
-            message.channel.stopTyping()
           });
         });
       });
