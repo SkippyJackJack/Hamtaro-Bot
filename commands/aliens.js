@@ -6,13 +6,11 @@ const Jimp = require('jimp');
     var rand = [Jimp.FONT_SANS_64_BLACK]
     return rand[Math.floor(Math.random() * rand.length)];
   }
-    
-    let user = message.author();
 
     let testingtxt = "hello";
 
     message.channel.startTyping()
-    var url = user.avatarURL;
+    var url = message.author.avatarURL;
 
     Jimp.read(url).then(function (image) {
 
