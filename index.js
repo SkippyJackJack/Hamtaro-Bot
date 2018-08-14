@@ -4,11 +4,16 @@ const Enmap = require("enmap");
 const fs = require("fs");
 const { promisify } = require("util");
 const moment = require("moment");
-
+const chalk = require("chalk");
 const client = new Discord.Client();
 const config = require("./config.json");
 
 client.config = config;
+
+client.on("ready",() => {
+  console.log(chalk.bgCyan.black.bold(`Online and active on ${client.guilds.size} servers.`));
+  client.user.setActivity(client.config.prefix + 'help', {type: 'WATCHING'});
+});
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
