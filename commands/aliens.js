@@ -19,11 +19,8 @@ Jimp.read(url)
             // delete file
             fs.unlink(outputfile);
             console.log("SUCCESS: " + message.author.username);
-            message.channel.stopTyping()
           });
         });
-
-      });
 
   function onBuffer(err, buffer) {
     if (err) throw err;
