@@ -5,5 +5,5 @@ module.exports = (client, message, guild, user) => {
 	const channel = message.guild.channels.find('name', client.config.announceBansChannel)
 	
 	if (!channel) return console.log("announceBansChannel not found");
-		channel.send(`${user.username} was just banned form the server!`);
+		channel.send(`${user} was just banned form the server!`);
 };
