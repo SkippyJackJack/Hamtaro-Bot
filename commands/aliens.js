@@ -6,7 +6,7 @@ const Jimp = require('jimp');
 
     message.channel.startTyping()
    
-    Jimp.read(../images/aliens.jpg).then(function (image) {
+    Jimp.read('../images/aliens.jpg').then(function (image) {
 
       image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
 
