@@ -6,9 +6,9 @@ exports.run = (client, message, args) => {
     'Probably',
     'Probably not'
   ];
-    var randomResponse = Math.floor(Math.random()*decideResponse.length);
+    var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
-  message.channel.send(randomResponse);
+  message.channel.send(decideResponse[randomResponse]);
     // TO DO: Create 'Thinking...' event.
     // .then(sentMessage => sentMessage.edit("Thinking."))
     // .then(sentMessage => sentMessage.edit("Thinking.."))
