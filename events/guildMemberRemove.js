@@ -7,5 +7,5 @@ module.exports = (client, message, member) => {
 	
 	if (!channel) return console.log("welcomeChannel not found");
 	
-	channel.send(`Say goodbye to ${member.user.username}, who was just removed from the server!`);
+	channel.send(`Say goodbye to ${member}, who was just removed from the server!`);
 };
