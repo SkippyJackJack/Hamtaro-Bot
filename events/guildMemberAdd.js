@@ -15,5 +15,5 @@ module.exports = (client, message, member) => {
     const channel = message.guild.channels.find('name', client.config.welcomeChannel);
     
     if (!channel) return console.log("welcomeChannel not found.");
-    	channel.send(welcomeMessage);
+    	channel.send(welcomeMessages[welcomeMessage]);
 };
