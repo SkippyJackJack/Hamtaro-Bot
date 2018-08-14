@@ -1,18 +1,19 @@
 exports.run = (client, message, args) => {
 
+const fs = require('fs');
 const Jimp = require('jimp');
 
-    let text = args.slice(1).join(" ");
+    let memeText = args.slice(1).join(" ");
     let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
    
     Jimp.read(image).then(function (image) {
 
       image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
 
-      Jimp.loadFont(Jimp.FONT_SANS_64_BLACK).then(function(font) { // load font from .fnt file
-        image.print(font, 20, 960, text, Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
+      Jimp.loadFont(Jimp.FONT_SANS_64_BLACK).then(function(font) {
+        image.print(font, 20, 960, memeText, Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
 
-        let outputfile = "./" + Math.random().toString(36).substr(2, 5) + "." + image.getExtension(); // create a random name for the output file
+        let outputfile = "./" + Math.random().toString(36).substr(2, 5) + "." + image.getExtension();
         image.write(outputfile, function () {
           message.channel.send({
                             files: [{
@@ -30,7 +31,7 @@ const Jimp = require('jimp');
     })
     
     function nullFunction(err, buffer) {
-         console.log("Created image");
+         console.log(buffer);
          if (err) throw err;
     }
 };
