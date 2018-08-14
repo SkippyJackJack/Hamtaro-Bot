@@ -3,10 +3,11 @@ exports.run = (client, message, args) => {
 const Jimp = require('jimp');
 
     let text = args.slice(1).join(" ");
-
+    let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
+    
     message.channel.startTyping()
    
-    Jimp.read('../images/aliens.jpg').then(function (image) {
+    Jimp.read(image).then(function (image) {
 
       image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
 
