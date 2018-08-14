@@ -10,7 +10,7 @@ const Jimp = require('jimp');
       image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
 
       Jimp.loadFont(Jimp.FONT_SANS_64_BLACK).then(function(font) { // load font from .fnt file
-        image.print(font, 20, 960, text, Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG)
+        image.print(font, 20, 960, text, Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
 
         let outputfile = "./" + Math.random().toString(36).substr(2, 5) + "." + image.getExtension(); // create a random name for the output file
         image.write(outputfile, function () {
@@ -28,7 +28,12 @@ const Jimp = require('jimp');
       console.error(err);
       message.reply(";-; I-I couldn't create the image, sorry.")
     })
-  };
+    
+    function nullFunction(err, buffer) {
+         console.log("Created image");
+         if (err) throw err;
+    }
+};
 
 exports.conf = {
   enabled: true,
