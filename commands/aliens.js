@@ -12,11 +12,24 @@ Jimp.read(url)
     console.error(err);
   });
 
+  let outputfile = "./output/" + Math.random().toString(36).substr(2, 5) + "sad." + image.getExtension(); // create a random name for the output file
+        image.write(outputfile, function () {
+          // upload file
+          message.channel.sendFile(outputfile).then(function () {
+            // delete file
+            fs.unlink(outputfile);
+            console.log("SUCCESS: " + message.author.username);
+            message.channel.stopTyping()
+          });
+        });
+
+      });
+
   function onBuffer(err, buffer) {
     if (err) throw err;
-    const attachment = new Discord.Attachment(buffer, 'aliens.jpg');
-    message.channel.send('Here:', attachment);
+    console.log("buffer");
   }
+  
 };
 
 exports.conf = {
