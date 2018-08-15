@@ -8,14 +8,14 @@ const Jimp = require('jimp');
     return rand[Math.floor(Math.random() * rand.length)];
   }
     
-    if args[0] {
-        message.reply("But you have to give me text ._.");
-    };
-    
     message.channel.startTyping();
     
     let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
     let text = args.join(" ");
+    
+    if (!text) {
+        return message.reply("But you have to give me text ._.");
+    };
     
     Jimp.read(image).then(function (image) {
         
