@@ -4,11 +4,18 @@ exports.run = (client, message, args) => {
     'Yes',
     'No',
     'Probably',
-    'Probably not'
+    'Probably not',
+    'Definitely',
+    'I think so',
+    'Without a doubt',
+    'Doubtful',
+    'Possibly',
+    'I believe so.
+    
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
-  message.channel.send(decideResponse[randomResponse]);
+  message.channel.reply(decideResponse[randomResponse]);
     // TO DO: Create 'Thinking...' event.
     // .then(sentMessage => sentMessage.edit("Thinking."))
     // .then(sentMessage => sentMessage.edit("Thinking.."))
@@ -25,6 +32,6 @@ exports.run = (client, message, args) => {
   
   exports.help = {
     "name": "decide",
-    "description": "Decides whether or not you should do something.",
+    "description": "Got trouble deciding?",
     "usage": "decide [question]"
   };
