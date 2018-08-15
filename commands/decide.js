@@ -13,14 +13,21 @@ exports.run = (client, message, args) => {
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
-  message.channel.reply(decideResponse[randomResponse]);
-    // TO DO: Create 'Thinking...' event.
-    // .then(sentMessage => sentMessage.edit("Thinking."))
-    // .then(sentMessage => sentMessage.edit("Thinking.."))
-    // .then(sentMessage => sentMessage.edit("Thinking..."))
-    // .then(sentMessage => sentMessage.edit(randomResponse));
- };
+  message.channel.reply("Thinking")
+  setTimeout(function() {
+    message.edit("Thinking.")
+  }, 300)
+  setTimeout(function() {
+    message.edit("Thinking..")
+  }, 600)
+  setTimeout(function() {
+    message.edit("Thinking...")
+  }, 900)
+  setTimeout(function() {
+    message.edit(decideResponse[randomResponse])
+  }, 1200)
   
+};
   exports.conf = {
     "enabled": "true",
     "guildOnly": "false",
