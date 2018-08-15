@@ -9,9 +9,7 @@ exports.run = (client, message, args) => {
     'I think so',
     'Without a doubt',
     'Doubtful',
-    'Possibly',
-    'I believe so.
-    
+    'Possibly'    
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
