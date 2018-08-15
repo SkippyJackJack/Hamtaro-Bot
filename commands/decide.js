@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
     sentMessage.edit(decideResponse[randomResponse])
   }, 1200)
   
-};
+)};
   exports.conf = {
     "enabled": "true",
     "guildOnly": "false",
