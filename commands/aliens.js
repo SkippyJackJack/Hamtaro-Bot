@@ -4,7 +4,7 @@ const fs = require('fs');
 const Jimp = require('jimp');
     
     function JFont() {
-    var rand = [Jimp.FONT_SANS_64_BLACK]
+    var rand = [Jimp.FONT_SANS_128_WHITE]
     return rand[Math.floor(Math.random() * rand.length)];
   }
     message.channel.startTyping();
@@ -17,7 +17,7 @@ const Jimp = require('jimp');
       image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
 
       Jimp.loadFont(JFont()).then(function(font) {
-        image.print(font, 20, 960, args.join(" "), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
+        image.print(font, 512, 512, args.join(" "), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
 
         let outputfile = "./" + Math.random().toString(36).substr(2, 5) + "." + image.getExtension();
         image.write(outputfile, function () {
