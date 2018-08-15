@@ -13,31 +13,32 @@ exports.run = (client, message, args) => {
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
-  message.reply("Thinking");
+  message.reply("Thinking")
+    .then(sentMessage => {
   
   setTimeout(function() {
-    message.edit("Thinking.")
+    sentMessage.edit("Thinking.")
   }, 300)
   setTimeout(function() {
-    message.edit("Thinking..")
+    sentMessage.edit("Thinking..")
   }, 600)
   setTimeout(function() {
-    message.edit("Thinking...")
+    sentMessage.edit("Thinking...")
   }, 900)
   setTimeout(function() {
-    message.edit(decideResponse[randomResponse])
+    sentMessage.edit(decideResponse[randomResponse])
   }, 1200)
   
 };
   exports.conf = {
     "enabled": "true",
     "guildOnly": "false",
-    "aliases": [],
+    "aliases": ['decision'],
     "permLevel": "0"
   };
   
   exports.help = {
     "name": "decide",
-    "description": "Got trouble deciding?",
-    "usage": "decide [question]"
+    "description": "Got trouble deciding? I can help with that ^-^",
+    "usage": "decide [decision]"
   };
