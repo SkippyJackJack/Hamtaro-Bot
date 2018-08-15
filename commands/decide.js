@@ -12,7 +12,12 @@ exports.run = (client, message, args) => {
     'Possibly'    
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
-    
+  let decision = args.join(" ");
+  
+  if (!decision) {
+    return message.reply("I can't decide on nothing o-o");
+  }
+  
   message.channel.startTyping();
   
   message.channel.send("Thinking")
@@ -28,7 +33,7 @@ exports.run = (client, message, args) => {
   }, 900)
   setTimeout(function() {
     sentMessage.edit(decideResponse[randomResponse])
-  }, 1300)
+  }, 1200)
   });
   
   message.channel.stopTyping();
