@@ -14,8 +14,7 @@ exports.run = (client, message, args) => {
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
   message.reply("Thinking")
-    .then(sentMessage => {
-  
+    .then(sentMessage => {  
   setTimeout(function() {
     sentMessage.edit("Thinking.")
   }, 300)
@@ -28,8 +27,8 @@ exports.run = (client, message, args) => {
   setTimeout(function() {
     sentMessage.edit(decideResponse[randomResponse])
   }, 1200)
-  
-)};
+  });
+};
   exports.conf = {
     "enabled": "true",
     "guildOnly": "false",
