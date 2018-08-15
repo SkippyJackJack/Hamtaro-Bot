@@ -13,21 +13,25 @@ exports.run = (client, message, args) => {
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
+  message.channel.startTyping();
+  
   message.channel.send("Thinking")
     .then(sentMessage => {  
   setTimeout(function() {
     sentMessage.edit("Thinking.")
-  }, 400)
+  }, 100)
   setTimeout(function() {
     sentMessage.edit("Thinking..")
-  }, 700)
+  }, 500)
   setTimeout(function() {
     sentMessage.edit("Thinking...")
-  }, 1000)
+  }, 900)
   setTimeout(function() {
     sentMessage.edit(decideResponse[randomResponse])
   }, 1300)
   });
+  
+  message.channel.stopTyping();
 };
   exports.conf = {
     "enabled": "true",
