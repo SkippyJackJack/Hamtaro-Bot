@@ -10,13 +10,15 @@ const Jimp = require('jimp');
     message.channel.startTyping();
     
     let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
+    let text = args.join(" ");
+    let textUpper = text.shift().toUpperCase();
     
     Jimp.read(image).then(function (image) {
         
     image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
         
       Jimp.loadFont(JFont()).then(function(font) {
-        image.print(font, 212, 280, args.join(" ").shift().toUppercase(), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
+        image.print(font, 212, 280, textUpper, Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
         image.write(outputfile, function () {
@@ -35,7 +37,7 @@ const Jimp = require('jimp');
       message.reply(";-; I-I couldn't create the image, sorry.")
     })
     
-    function nullFunction(err, buffer) {
+    function nullFunction(err) {
          if (err) throw err;
     }
     
