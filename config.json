@@ -1,7 +1,7 @@
 {
   "ownerID": "428783792275193868",
   "prefix": "?",
-  "invite-link": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
+  "inviteLink": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
   
   "announceBans": "true",
   "announceBansChannel": "general",
