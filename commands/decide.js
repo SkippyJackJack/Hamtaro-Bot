@@ -13,20 +13,20 @@ exports.run = (client, message, args) => {
   ];
     var randomResponse = Math.floor(Math.random() * decideResponse.length);
     
-  message.reply("Thinking")
+  message.channel.send("Thinking")
     .then(sentMessage => {  
   setTimeout(function() {
     sentMessage.edit("Thinking.")
-  }, 300)
+  }, 400)
   setTimeout(function() {
     sentMessage.edit("Thinking..")
-  }, 600)
+  }, 700)
   setTimeout(function() {
     sentMessage.edit("Thinking...")
-  }, 900)
+  }, 1000)
   setTimeout(function() {
     sentMessage.edit(decideResponse[randomResponse])
-  }, 1200)
+  }, 1300)
   });
 };
   exports.conf = {
