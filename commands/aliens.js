@@ -16,7 +16,7 @@ const Jimp = require('jimp');
         
     image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
         
-      Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(function(font) {
+      Jimp.loadFont("../src/fonts/impact.bmp").then(function(font) {
         image.print(font, 212, 280, text.toUpperCase(), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
