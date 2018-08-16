@@ -3,6 +3,11 @@ exports.run = async (client, message, args) => {
 const fs = require('fs');
 const Jimp = require('jimp');
     
+    function font() {
+        let url = '../src/fonts/impact.bmp';
+        return url;
+    };
+    
     message.channel.startTyping();
     
     let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
@@ -16,7 +21,7 @@ const Jimp = require('jimp');
         
     image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
         
-      Jimp.loadFont("../src/fonts/impact.bmp").then(function(font) {
+      Jimp.loadFont(font()).then(function(font) {
         image.print(font, 212, 280, text.toUpperCase(), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, nullFunction)
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
