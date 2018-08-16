@@ -19,6 +19,6 @@ exports.conf = {
 
 exports.help = {
     name: 'kick',
-    description: 'Kicks a player from the server. Kicked players can re-join with a valid invite.',
+    description: '[WORK-IN-PROGRESS] Kicks a player from the server. Kicked players can re-join with a valid invite.',
     usage: 'kick [member] [reason]'
 };
