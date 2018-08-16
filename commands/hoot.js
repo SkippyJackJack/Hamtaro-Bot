@@ -2,9 +2,7 @@ exports.run = (client, message, args) => {
 
 var request = require("request")
 
-var url = "http://developer.cumtd.com/api/v2.2/json/GetStop?" +
-    "key=d99803c970a04223998cabd90a741633" +
-    "&stop_id=it"
+var url = "https://random-images-api.herokuapp.com/hoot.html"
 
 request({
     url: url,
