@@ -1,25 +1,18 @@
 exports.run = (client, message, args) => {
 
-const http = require('http');
+var request = require("request")
 
-let options = {
-    host: 'random-images-api.herokuapp.com',
-    path: '/hoot.html'
-}
-var request = http.request(options, function (res) {
-    var data = '';
-    res.on('data', function (chunk) {
-        data += chunk;
-    });
-    res.on('end', function () {
-        console.log(data);
+var url = "random-images-api.herokuapp.com/hoot.html"
 
-    });
-});
-request.on('error', function (e) {
-    console.log(e.message);
-});
-request.end();
+request({
+    url: url,
+    json: true
+}, function (error, response, body) {
+
+    if (!error && response.statusCode === 200) {
+        console.log(body) // Print the json response
+    }
+})
 };
 
 exports.conf = {
