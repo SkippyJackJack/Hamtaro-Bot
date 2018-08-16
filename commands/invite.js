@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-    message.reply("Invite me to your server here: " + client.config.inviteLink);
+    message.reply("My master gave me this special invite link: " + client.config.inviteLink);
 };
 
 exports.conf = {
@@ -11,6 +11,6 @@ exports.conf = {
 
 exports.help ={
     name: 'invite',
-    description: 'Displays a link that will allow you to invite me to your server!',
+    description: 'Get my master\'s secret invite link...',
     usage: 'invite'
 };
