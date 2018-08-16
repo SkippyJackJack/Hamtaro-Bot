@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
 const fs = require('fs');
 const Jimp = require('jimp');
