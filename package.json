@@ -26,7 +26,7 @@
   "homepage": "https://github.com/High-Fox/Hamtoro-Bot#readme",
   "dependencies": {
     "chalk": "^2.3.0",
-    "discord.js": "latest",
+    "discord.js": "^11.3.2",
     "enmap": "^2.0.4",
     "enmap-level": "^2.0.2",
     "moment": "^2.20.1",
