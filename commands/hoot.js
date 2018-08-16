@@ -24,6 +24,6 @@ exports.conf = {
 
 exports.help = {
   name: "hoot",
-  description: "Hoo-Hoot! ^o,o^",
+  description: "[WORK-IN-PROGRESS] Hoo-Hoot! ^o,o^",
   usage: "hoot"
 };
