@@ -25,14 +25,13 @@ exports.run = (client, message, args) => {
   .addBlankField(true)
 
   message.channel.send({embed});
-  };
+  }
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['pushupdate'],
-  permLevel: "0"
+  aliases: ['pushupdate']
 };
 
 exports.help = {
