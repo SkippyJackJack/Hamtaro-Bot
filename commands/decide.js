@@ -39,8 +39,8 @@ exports.run = (client, message, args) => {
   setTimeout(function() {
     sentMessage.edit("**Your question:** " + decision + "\n**Answer**: " + decideResponse[randomResponse])
   }, 1180)
-  message.channel.stopTyping();
   });
+  message.channel.stopTyping();
 };
   exports.conf = {
     "enabled": "true",
