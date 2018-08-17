@@ -14,7 +14,7 @@ module.exports = (client, message) => {
   if (client.commands.has(command)) {
     cmd = client.commands.get(command);
   } else if (client.aliases.has(command)) {
-    cmd = client.commands.get(message.client.aliases.get(command));
+    cmd = client.commands.get(client.aliases.get(command));
   }
 
   // If that command doesn't exist, silently exit and do nothing
