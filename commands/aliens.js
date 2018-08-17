@@ -46,8 +46,7 @@ const Jimp = require('jimp');
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['aliensmeme'],
-  permLevel: "0"
+  aliases: ['aliensmeme']
 };
 
 exports.help = {
