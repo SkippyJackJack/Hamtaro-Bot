@@ -16,12 +16,11 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['h'],
-  permLevel: 0
+  aliases: ['h']
 };
 
 exports.help = {
   name: 'help',
-  description: 'Displays all the available commands for your permission level.',
+  description: 'Gives you all of my commands :3',
   usage: 'help [command]'
 };
