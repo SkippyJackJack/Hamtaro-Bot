@@ -23,11 +23,11 @@ exports.run = (client, message, args) => {
   
   message.channel.startTyping();
   
-  message.channel.send(" ")
-  .then(sentMessage => {  
-  setTimeout(funtion() {
+  message.channel.send(".")
+   .then(sentMessage => {  
+  setTimeout(function() {
     sentMessage.edit("Thinking")
-  }, 1)
+  }, 10)
   setTimeout(function() {
     sentMessage.edit("Thinking.")
   }, 100)
@@ -41,17 +41,18 @@ exports.run = (client, message, args) => {
     sentMessage.edit("**Your question:** " + decision + "\n**Answer**: " + decideResponse[randomResponse])
   }, 1180)
   });
+
   message.channel.stopTyping();
 };
 
   exports.conf = {
-    "enabled": "true",
-    "guildOnly": "false",
-    "aliases": ['decision']
+    enabled: true,
+    guildOnly: false,
+    aliases: ['decision']
   };
   
   exports.help = {
-    "name": "decide",
-    "description": "Got trouble deciding? I can help with that ^-^",
-    "usage": "decide [text]"
+    name: "decide",
+    description": "Got trouble deciding? I can help with that ^-^",
+    usage: "decide [text]"
   };
