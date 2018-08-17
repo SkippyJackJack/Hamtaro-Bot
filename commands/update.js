@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   
  client.fetchUser(client.config.ownerID).then(owner => {
    var ownerAvatar = owner.avatarURL;
- };
+ });
                                               
  const embed = new Discord.RichEmbed()
   .setTitle("Hamtoro Bot is now in Maintenance Mode")
