@@ -2,21 +2,21 @@ exports.run = (client, message, args) => {
 	message.channel.send({embed: {
 		color: 3447003,
 		author: {
-		  name: client.user.username,
-      		  icon_url: client.user.avatarURL
+		  name: message.guild.name,
+      		  icon_url: message.guild.iconURL
 		},
-		title: `${message.guild.iconURL} **Info for ${message.guild.name}**`,
+		title: `Info for ${message.guild.name}`,
 		description: "Here is some information about the current server.",
 		fields: [{
-		    name: "**Members**",
+		    name: "Members",
 		    value: `${message.guild.memberCount}`
 		},
 		{
-		    name: "**Created on:**",
+		    name: "Created on:",
 		    value: `${message.guild.createdAt}`
 		},
 		{
-		    name: "**Owner:**",
+		    name: "Owner:",
 		    value: `${message.guild.owner}`
 		}	
 	   ],	
