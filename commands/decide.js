@@ -3,8 +3,8 @@ exports.run = (client, message, args) => {
   const decideResponse = [
     'Yes',
     'No',
-    'Probably',
-    'Probably not',
+    'Most likely',
+    'Plz no ;-;',
     'Definitely',
     'I think so',
     'Without a doubt',
@@ -21,10 +21,12 @@ exports.run = (client, message, args) => {
     return message.reply("I can't decide on nothing o-o");
   }
   
-  message.channel.startTyping();
-  
-  message.channel.send("Thinking")
+  message.channel.send(" ")
     .then(sentMessage => {  
+  message.channel.startTyping();
+  setTimeout(funtion() {
+    sentMessage.edit("Thinking")
+  }, 1)
   setTimeout(function() {
     sentMessage.edit("Thinking.")
   }, 100)
@@ -35,21 +37,19 @@ exports.run = (client, message, args) => {
     sentMessage.edit("Thinking...")
   }, 900)
   setTimeout(function() {
-    sentMessage.edit(decideResponse[randomResponse])
-  }, 1200)
-  });
-  
+    sentMessage.edit("**Your question:** " + decision + "\n**Answer**: " + decideResponse[randomResponse])
+  }, 1180)
   message.channel.stopTyping();
+  });
 };
   exports.conf = {
     "enabled": "true",
     "guildOnly": "false",
-    "aliases": ['decision'],
-    "permLevel": "0"
+    "aliases": ['decision']
   };
   
   exports.help = {
     "name": "decide",
     "description": "Got trouble deciding? I can help with that ^-^",
-    "usage": "decide [decision]"
+    "usage": "decide [text]"
   };
