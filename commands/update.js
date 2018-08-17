@@ -1,10 +1,10 @@
 exports.run = (client, message, args) => {
   
- if (message.author.id !== client.config.ownerId) return message.channel.send("Only my creator may push updates ^-^");
+ if (message.author.id !== client.config.ownerId) return message.channel.send("Only my creator may push updates ^-^")
   
  client.fetchUser(client.config.ownerID).then(owner => {
    var ownerAvatar = owner.avatarURL;
- });
+ })
                                               
  const embed = new Discord.RichEmbed()
   .setTitle("Hamtoro Bot is now in Maintenance Mode")
@@ -24,8 +24,7 @@ exports.run = (client, message, args) => {
     "During this time it will still be able to receive commands and respond to them, but please refrain from doing so.")
   .addBlankField(true)
 
-  message.channel.send({embed});
-  }
+  message.channel.send({embed})
 };
 
 exports.conf = {
