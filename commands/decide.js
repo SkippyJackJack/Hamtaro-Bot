@@ -21,9 +21,10 @@ exports.run = (client, message, args) => {
     return message.reply("I can't decide on nothing o-o");
   }
   
-  message.channel.send(" ")
-    .then(sentMessage => {  
   message.channel.startTyping();
+  
+  message.channel.send(" ")
+  .then(sentMessage => {  
   setTimeout(funtion() {
     sentMessage.edit("Thinking")
   }, 1)
@@ -42,6 +43,7 @@ exports.run = (client, message, args) => {
   });
   message.channel.stopTyping();
 };
+
   exports.conf = {
     "enabled": "true",
     "guildOnly": "false",
