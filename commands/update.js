@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
   
- if (message.author.id !== client.config.ownerId) return message.channel.send("Only my creator may push updates ^-^")
+ if (message.author.id !== client.config.ownerID) return message.channel.send("Only my creator may push updates ^-^")
   
  client.fetchUser(client.config.ownerID).then(owner => {
    var ownerAvatar = owner.avatarURL;
