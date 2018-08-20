@@ -31,7 +31,20 @@ const links = [
   "https://media.giphy.com/media/Z5W9H5DtCWN4k/giphy.gif",
   "https://media.giphy.com/media/YwO4nS4NoLWBW/giphy.gif",
   "https://media.giphy.com/media/12mNZ256B87ULm/giphy.gif",
-  "https://media.giphy.com/media/IWhdzaaiet9ni/giphy.gif"
+  "https://media.giphy.com/media/IWhdzaaiet9ni/giphy.gif",
+  "https://media.giphy.com/media/NBFWQBHEEj1bG/giphy.gif",
+  "https://media.giphy.com/media/I1r5jpUvdGra8/giphy.gif",
+  "https://tenor.com/view/owl-gif-9233151",
+  "https://tenor.com/view/owl-gif-5705190",
+  "https://tenor.com/view/boop-owl-gif-10047830",
+  "https://tenor.com/view/owl-feather-animal-animals-annoyed-gif-4984224",
+  "https://tenor.com/view/funny-animals-owl-birds-brave-dio-brando-gif-12041955",
+  "https://tenor.com/view/owl-gif-9623961",
+  "https://tenor.com/view/owl-funny-animals-gif-11081718",
+  "https://i.imgflip.com/1x39ol.jpg",
+  "https://favim.com/orig/201106/03/animal-bird-cute-funny-owl-photography-Favim.com-65193.jpg",
+  "https://imgur.com/a/ZqFuIoc",
+  "http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Cute-Owl-Wallpaper.jpg"
 ];
   
   var randomLink = Math.floor(Math.random() * links.length);
@@ -48,6 +61,6 @@ exports.conf = {
 
 exports.help = {
   name: "hoot",
-  description: "Hoo-Hoot! ^o,o^",
+  description: "H-Hoot! H-Hoot! ^o,o^",
   usage: "hoot"
 };
