@@ -29,6 +29,6 @@
     "discord.js": "^11.3.2",
     "enmap": "^2.0.4",
     "enmap-level": "^2.0.2",
-    "jimp": "latest",
+    "jimp": "latest"
   }
 }
