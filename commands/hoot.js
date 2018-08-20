@@ -1,6 +1,4 @@
 exports.run = (client, message, args) => {
-  
-const talkedRecently = new Set();
 
 if (talkedRecently.has(message.author.id))
   return;
