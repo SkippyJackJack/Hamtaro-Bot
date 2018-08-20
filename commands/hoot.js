@@ -1,5 +1,15 @@
 exports.run = (client, message, args) => {
+  
+const talkedRecently = new Set();
 
+if (talkedRecently.has(message.author.id))
+  return;
+
+talkedRecently.add(message.author.id);
+setTimeout(() => {
+  talkedRecently.delete(message.author.id);
+}, 10000);
+  
 const links = [
   "https://media.giphy.com/media/bz7Lkscqm6mrK/giphy.gif",
   "https://media.giphy.com/media/1hWHUCgi3wKT6/giphy.gif",
