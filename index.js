@@ -7,8 +7,6 @@ const chalk = require("chalk");
 const client = new Discord.Client();
 const config = require("./config.json");
 
-const talkedRecently = new Set();
-
 client.config = config;
 
 client.on("ready",() => {
