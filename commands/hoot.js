@@ -33,9 +33,10 @@ const links = [
   "https://media.giphy.com/media/12mNZ256B87ULm/giphy.gif",
   "https://media.giphy.com/media/IWhdzaaiet9ni/giphy.gif"
 ];
+  
   var randomLink = Math.floor(Math.random() * links.length);
     
-  message.channel.send(randomLink);
+  message.channel.send(links[randomLink]);
 
 };
 
