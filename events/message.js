@@ -4,7 +4,16 @@ module.exports = (client, message) => {
   
   // Ignore messages not starting with the prefix (in config.json)
   if (message.content.indexOf(client.config.prefix) !== 0) return;
+  
+  if (talkedRecently.has(message.author.id))
+  return;
 
+  talkedRecently.add(message.author.id);
+  
+  setTimeout(() => {
+     talkedRecently.delete(message.author.id);
+  }, 10000);
+  
   // Our standard argument/command name definition.
   const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
