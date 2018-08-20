@@ -1,12 +1,4 @@
 exports.run = (client, message, args) => {
-
-if (talkedRecently.has(message.author.id))
-  return;
-
-talkedRecently.add(message.author.id);
-setTimeout(() => {
-  talkedRecently.delete(message.author.id);
-}, 10000);
   
 const links = [
   "https://media.giphy.com/media/bz7Lkscqm6mrK/giphy.gif",
