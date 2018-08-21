@@ -29,3 +29,15 @@ exports.run = (client, message, args) => {
   }
 }).then(msg => client.destroy());
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: []
+};
+
+exports.help = {
+  name: "maintenance",
+  description: "Puts me in maintenance mode x-x",
+  usage: "maintenance [downtime]"
+};
