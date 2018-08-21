@@ -23,7 +23,7 @@ const hamsterLinks = [
   "https://media.giphy.com/media/uTIZmj69qCjCM/giphy.gif"
 ];
   
-  var randomHamsterLink = Math.floor(Math.random() * bearLinks.length);
+  var randomHamsterLink = Math.floor(Math.random() * hamsterLinks.length);
     
   message.channel.send(hamsterLinks[randomHamsterLink]);
 
