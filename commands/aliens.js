@@ -27,7 +27,10 @@ const Jimp = require('jimp');
                                 name: "output.jpg"
                             }]
                         }).then(function () {
-            fs.unlink(outputfile);
+            fs.unlink(outputfile, (err) => {
+                              if (err) throw err;
+                              console.log("Image Created");
+            });
           });
         });
       });
