@@ -24,7 +24,7 @@ const bearLinks = [
   "https://media.giphy.com/media/vYtDDrgTXyrm0/giphy.gif"
 ];
   
-  var randomBearLink = Math.floor(Math.random() * links.length);
+  var randomBearLink = Math.floor(Math.random() * bearLinks.length);
     
   message.channel.send(bearLinks[randomBearLink]);
 
