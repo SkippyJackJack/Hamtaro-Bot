@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 	
   const allGuilds = client.guilds.array();
   
-	message.channel.send({embed: {
+message.channel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     title: `**»** __Notice of Hibernation__ **«**`,
     description: `Hamtaro Bot will now be in hibernation in order to add new features, fix some bugs and improve the overall performance.\nDuring this time it will be unable to receive commands and send messages to the server.`,
     fields: [{
-        name: "**Maintenance Duration**",
+        name: "**Hibernation Duration**",
         value: `${downtime}`
       },
       {
@@ -40,7 +40,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "maintenance",
+  name: "hibernation",
   description: "Puts me in hibernation x-x",
-  usage: "maintenance [downtime]"
+  usage: "hibernation [downtime]"
 };
