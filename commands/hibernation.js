@@ -30,6 +30,7 @@ message.channel.send({embed: {
     }
   }
 })
+   client.user.setActivity("beautiful dreams...", {type: 'WATCHING'});
    client.destroy();
 };
 
