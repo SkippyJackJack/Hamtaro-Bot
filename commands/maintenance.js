@@ -27,5 +27,5 @@ exports.run = (client, message, args) => {
       text: "Hamtoro Bot © High-Fox 2018"
     }
   }
-})
+}).then(msg => client.destroy());
 };
