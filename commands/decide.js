@@ -15,7 +15,9 @@ exports.run = (client, message, args) => {
   
   var randomResponse = Math.floor(Math.random() * decideResponse.length);
   
-  if (!args) {
+  var decision = args.join(" ");
+  
+  if (!decision) {
     return message.reply("I can't decide on nothing o-o");
   }
   
@@ -36,7 +38,7 @@ exports.run = (client, message, args) => {
     sentMessage.edit("Thinking...")
   }, 900)
   setTimeout(function() {
-    sentMessage.edit("**Your question:** " + args + "\n**Answer**: " + decideResponse[randomResponse])
+    sentMessage.edit("**Your question:** " + decision + "\n**Answer**: " + decideResponse[randomResponse])
   }, 1180)
   });
 
