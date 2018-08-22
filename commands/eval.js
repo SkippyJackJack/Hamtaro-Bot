@@ -16,10 +16,12 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   
   if (message.author.id !== client.config.ownerID) return;
   
+  const code = args.join(" ");
+  
   client.wait = require("util").promisify(setTimeout);
   
   try {
-    const evaled = eval(args);
+    const evaled = eval(code);
     const clean = await client.clean(client, evaled);
     
     message.channel.send(`\`\`\`js\n${clean}\n\`\`\``);
