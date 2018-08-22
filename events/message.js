@@ -6,8 +6,7 @@ module.exports = (client, message) => {
   if (message.content.indexOf(client.config.prefix) !== 0) return;
   
   // Our standard argument/command name definition.
-  const argsArray = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
-  const args = argsArray.join(" ");
+  const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = argsArray.shift().toLowerCase();
   
   // If the message is just "?", ignore it
