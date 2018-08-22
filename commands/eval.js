@@ -16,7 +16,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   
   if (message.author.id !== client.config.ownerID) return;
   
-  const code = args.join(" ");
+  const code = args;
   client.wait = require("util").promisify(setTimeout);
   
   try {
@@ -38,6 +38,6 @@ exports.conf = {
 
 exports.help = {
   name: "eval",
-  description: "Executes arbitrary javascript. Only usable by the Bot Owner.",
+  description: "Executes arbitrary javascript. Only usable by the Bot Owner, for safety reasons.",
   usage: "eval [...code]"
 };
