@@ -8,7 +8,7 @@ module.exports = (client, message) => {
   // Our standard argument/command name definition.
   const argsArray = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const args = argsArray.join(" ");
-  const command = args.shift().toLowerCase();
+  const command = argsArray.shift().toLowerCase();
   
   // If the message is just "?", ignore it
   if (!command) return;
