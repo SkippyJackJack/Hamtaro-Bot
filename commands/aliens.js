@@ -7,7 +7,7 @@ const Jimp = require('jimp');
     
     let image = "https://imgflip.com/s/meme/Ancient-Aliens.jpg";
     
-    if (!text) {
+    if (!args) {
         return message.reply("But you have to give me text ._.");
     };
     
