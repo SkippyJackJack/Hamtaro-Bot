@@ -16,13 +16,13 @@ exports.run = (client, message, args) => {
   var randomResponse = Math.floor(Math.random() * decideResponse.length);
   
   var decision = args.join(" ");
-  
+      
   if (!decision) {
     return message.reply("I can't decide on nothing o-o");
   }
   
   message.channel.startTyping();
-  
+      
   message.channel.send(".")
    .then(sentMessage => {  
   setTimeout(function() {
@@ -38,13 +38,20 @@ exports.run = (client, message, args) => {
     sentMessage.edit("Thinking...")
   }, 900)
   setTimeout(function() {
-    sentMessage.edit("**Your question:** " + decision + "\n**Answer**: " + decideResponse[randomResponse])
+   if (decision.includes(" or ")) {
+    var options = decision.split(" or ");
+    var randomOption = Math.floor(Math.random() * options.length);
+     
+    sentMessage.edit("**Question:** " + decision + "\n**Answer**: " + options[randomOption])
+     
+   } else {
+     
+    sentMessage.edit("**Question:** " + decision + "\n**Answer**: " + decideResponse[randomResponse])
+   };
   }, 1180)
   });
-
-  message.channel.stopTyping();
-};
-
+ };
+  
   exports.conf = {
     enabled: true,
     guildOnly: false,
