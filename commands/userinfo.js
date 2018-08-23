@@ -1,7 +1,6 @@
-const {RichEmbed} = require("discord.js");
 exports.run = (client, message, args) => {
 	
- let embed = new Discord.RichEmbed()
+ let userInfoEmbed = new Discord.RichEmbed()
   .setTitle("**Username**")
   .setAuthor("User Info")
   .setColor('GREEN')
@@ -11,7 +10,7 @@ exports.run = (client, message, args) => {
   .addField('**Account Created**', `${message.author.createdTimestamp}`, true)
   .addField('**Bot Account**', `${message.author.bot}`, true);
   
-   message.channel.send({embed});
+   message.channel.send({userInfoEmbed});
 };
 
 exports.conf = {
