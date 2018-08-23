@@ -20,7 +20,8 @@ const hamsterLinks = [
   "https://media.giphy.com/media/ncU3bkZ5ghDlS/giphy.gif",
   "https://media.giphy.com/media/TkUZUZ9E6KhJC/giphy.gif",
   "https://media.giphy.com/media/L2vRqCV1lPTq0/giphy.gif",
-  "https://media.giphy.com/media/uTIZmj69qCjCM/giphy.gif"
+  "https://media.giphy.com/media/uTIZmj69qCjCM/giphy.gif",
+  "https://media.giphy.com/media/M4trH1uta8OPu/giphy.gif"
 ];
   
   var randomHamsterLink = Math.floor(Math.random() * hamsterLinks.length);
