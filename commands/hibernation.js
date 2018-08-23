@@ -15,7 +15,7 @@ message.channel.send({embed: {
       icon_url: client.user.avatarURL
     },
     title: `**»** __Notice of Hibernation__ **«**`,
-    description: `Hamtaro Bot will now be in hibernation in order to add new features, fix some bugs and improve the overall performance.\nDuring this time it will be unable to receive commands and send messages to the server.`,
+    description: `Hamtaro Bot will now be in hibernation in order to add new features, fix some bugs and give him a rest.\nDuring this time it will be unable to receive commands and send messages to the server.`,
     fields: [{
         name: "**Hibernation Duration**",
         value: `${downtime}`
@@ -38,7 +38,7 @@ message.channel.send({embed: {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: []
+  aliases: ['maintenance']
 };
 
 exports.help = {
