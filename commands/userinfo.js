@@ -1,6 +1,17 @@
 exports.run = (client, message, args) => {
-	message.channel.send(`Info for ${message.author.username}:\n**ID:** ${message.author.id}\n**Created on:** ${message.author.createdTimestamp}\n **Avatar:** ${message.author.avatarURL}`);
-}
+	
+ let embed = new Discord.RichEmbed()
+  .setAuthor("User Info")
+  .setTitle("**Username**")
+  .setDescription(message.author.username)
+  .addField('**ID**', messagel.author.ID, false)
+  .addField('**Account Created**', message.author.createdTimestamp, true)
+  .addField('**Bot Account**', message.author.bot, true)
+  .setThumbnail(message.author.avatarURL)
+  .setColor('GREEN')
+ 
+ message.channel.send({embed});
+};
 
 exports.conf = {
   enabled: true,
