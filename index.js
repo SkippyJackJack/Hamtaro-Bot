@@ -10,7 +10,7 @@ const config = require("./config.json");
 client.config = config;
 
 client.on("ready",() => {
-  console.log(chalk.bgCyan.black.bold(`Online and active on ${client.guilds.size} servers.`));
+  console.log(chalk.bgCyan.black(`Online and active on ${client.guilds.size} servers.`));
   client.user.setActivity(client.config.prefix + 'help', {type: 'WATCHING'});
 });
 
