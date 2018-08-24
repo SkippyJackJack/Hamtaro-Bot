@@ -1,4 +1,3 @@
-const { RichEmbed } = require("discord.js");
 exports.run = (client, message, args) => {
   
 const hamsterLinks = [
@@ -26,14 +25,10 @@ const hamsterLinks = [
 ];
   
   var randomHamsterLink = Math.floor(Math.random() * hamsterLinks.length);
-    
-  const hamsterEmbed = new RichEmbed()
-    .setAuthor(client.user.username, client.user.avatarURL)
-    .setTitle("Have a hamster (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧")
-    .setImage(hamsterLinks[randomHamsterLink]);
   
-  message.channel.send({hamsterEmbed});
-
+  message.channel.send("Have a hamster *Squeak!*", { 
+    file: randomHamsterLink
+  })
 };
 
 exports.conf = {
