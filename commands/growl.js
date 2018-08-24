@@ -36,7 +36,7 @@ const bearJokes = [
   
   var randomBearLink = Math.floor(Math.random() * bearLinks.length);
     
-  message.channel.send( { embed: { title: bearJokes[randomBearJoke], image: { url: bearLinks[randomBearLink] }, }, } );
+  message.channel.send( { embed: { title: bearJokes[randomBearJoke], image: { url: bearLinks[randomBearLink], }, } } );
 };
 
 exports.conf = {
