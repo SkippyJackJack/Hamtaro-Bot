@@ -27,7 +27,7 @@ const hamsterLinks = [
   var randomHamsterLink = Math.floor(Math.random() * hamsterLinks.length);
   
   message.channel.send("Have a hamster *Squeak!*", { 
-    file: randomHamsterLink
+    file: hamsterLinks[randomHamsterLink]
   })
 };
 
