@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
   const allGuilds = client.guilds.array();
   
 message.channel.send({embed: {
-    color: 3447003,
+    color: 0xf29837,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
