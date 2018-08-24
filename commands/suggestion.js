@@ -1,6 +1,5 @@
 exports.run = async (client, message, args) => {
 
-  let client = message.channel.client;
   let suggestionText = args.join(" ");
 
   // Fetch user via given user id
