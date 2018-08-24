@@ -1,6 +1,13 @@
 {
+  
   "ownerID": "428783792275193868",
   "prefix": "?",
   "inviteLink": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
   "version": "0.0.0 [In-Development]"
+  
+  "aboutEmbedColour": "0xf29837",
+  "growlEmbedColour": "0xf29837",
+  "hootEmbedColour": "0xf29837",
+  "squeakEmbedColour": "0xf29837"
+  
 }
