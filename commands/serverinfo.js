@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 	message.channel.send({embed: {
-		color: 3447003,
+		color: client.config.serverInfoEmbedColour,
 		author: {
 		  name: message.guild.name,
       		  icon_url: message.guild.iconURL
