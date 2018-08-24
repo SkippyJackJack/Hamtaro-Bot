@@ -49,7 +49,7 @@ const owlLinks = [
   
   var randomOwlLink = Math.floor(Math.random() * owlLinks.length);
     
-  message.channel.send( { embed: { title: `Special Delivery for ${message.author.username}!`, description: owlLinks[randomOwlLink], image: { url: owlLinks[randomOwlLink], }, } } )
+  message.channel.send( { embed: { title: `Special Delivery for ${message.author.username}!`, image: { url: owlLinks[randomOwlLink], }, } } )
 };
 
 exports.conf = {
