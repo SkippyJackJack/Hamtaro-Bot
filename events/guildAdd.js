@@ -16,7 +16,7 @@ embed:{
     },
     color: 0x2471a3, 
     description: "Use ?help to see my commands! ^-^",
-    fields:[
+    fields: [
         {
             name: 'My Master:',
             value: 'High-Fox'
@@ -30,8 +30,8 @@ embed:{
             value: '[INSERT SERVER LINK HERE]'
         } 
     ],
-
     footer: {
         text: 'Hamtaro Bot © High-Fox 2018'
     }
-}
+  }
+};
