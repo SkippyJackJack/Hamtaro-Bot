@@ -32,6 +32,6 @@ embed:{
     ],
 
     footer: {
-        text: 'Hamtaro Bot © High-Fox 2018
+        text: 'Hamtaro Bot © High-Fox 2018'
     }
 }
