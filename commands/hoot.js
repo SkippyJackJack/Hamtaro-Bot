@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
   
-const links = [
+const owlLinks = [
   "https://media.giphy.com/media/bz7Lkscqm6mrK/giphy.gif",
   "https://media.giphy.com/media/1hWHUCgi3wKT6/giphy.gif",
   "https://media.giphy.com/media/s68CylvQ9ioRa/giphy.gif",
@@ -47,11 +47,9 @@ const links = [
   "http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Cute-Owl-Wallpaper.jpg"
 ];
   
-  var randomLink = Math.floor(Math.random() * links.length);
+  var randomOwlLink = Math.floor(Math.random() * owlLinks.length);
     
-  message.channel.send(`Special Delivery for ${message.author.username}!`, {
-    file: links[randomLink]
-  })
+  message.channel.send( { embed: { title: `Special Delivery for ${message.author.username}!`, description: owlLinks[randomOwlLink], image: { url: owlLinks[randomOwlLink], }, } } )
 };
 
 exports.conf = {
