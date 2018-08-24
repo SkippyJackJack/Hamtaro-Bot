@@ -18,7 +18,7 @@ embed:{
     description: "Use ?help to see my commands! ^-^",
     fields: [
         {
-            name: 'My Master:',
+            name: '**My Master:**',
             value: 'High-Fox'
         },     
         {
@@ -33,5 +33,5 @@ embed:{
     footer: {
         text: 'Hamtaro Bot © High-Fox 2018'
     }
-  }
+  })
 };
