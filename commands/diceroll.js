@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   
   var randomSide = Math.floor(Math.random() * sides.length);
   
-  message.channel.send(side[randomSide]);
+  message.channel.send(sides[randomSide]);
   
 };
 
