@@ -22,7 +22,7 @@ const Jimp = require('jimp');
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
         image.write(outputfile, function () {
-          message.channel.send({
+          message.channel.send("Nice memeing ~", {
                             files: [{
                                 attachment: outputfile,
                                 name: "output.jpg"
