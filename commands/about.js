@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
 
   message.channel.send({embed: {
-    color: 3447003,
+    color: client.config.embedColour,
     title: `Hamtoro Bot »|« Release ${client.config.version} [ALPHA]`,
     description: "High-Fox",
     fields: [{
@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
         value: "High-Fox"
       },
       {
-        name: "Library",
+        name: "Library:",
         value: "Discord.js"
       },
       {
