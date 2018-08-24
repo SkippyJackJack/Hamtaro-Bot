@@ -26,8 +26,9 @@ const bearLinks = [
   
   var randomBearLink = Math.floor(Math.random() * bearLinks.length);
     
-  message.channel.send(bearLinks[randomBearLink]);
-
+  message.channel.send("What do you call a bear that jumps but never lands?\n**A Peter Panda!**", {
+    file: bearLinks[randomBearLink]
+  })
 };
 
 exports.conf = {
