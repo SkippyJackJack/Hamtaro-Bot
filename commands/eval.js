@@ -24,10 +24,10 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     const evaled = eval(code);
     const clean = await client.clean(client, evaled);
     
-    message.channel.send(`\`\`\`js\n${clean}\n\`\`\``);
+    console.log(`\`\`\`js\n${clean}\n\`\`\``);
     
   } catch (err) {
-    message.channel.send(`\`ERROR\` \`\`\`xl\n${await client.clean(client, err)}\n\`\`\``);
+    console.log("Error executing ?eval command");
   }
 };
 
