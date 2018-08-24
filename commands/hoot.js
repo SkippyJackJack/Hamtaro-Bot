@@ -49,8 +49,9 @@ const links = [
   
   var randomLink = Math.floor(Math.random() * links.length);
     
-  message.channel.send(links[randomLink]);
-
+  message.channel.send(`Special Delivery for ${message.author.username}!`, {
+    file: links[randomLink]
+  })
 };
 
 exports.conf = {
