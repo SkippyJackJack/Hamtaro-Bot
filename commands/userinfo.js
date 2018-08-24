@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   .addField("**Account Created**", `${message.author.createdTimestamp}`, true)
   .addField("**Bot Account**", `${message.author.bot}`, true);
   
-   message.channel.send(userInfoEmbed);
+   message.channel.send({userInfoEmbed});
 };
 
 exports.conf = {
