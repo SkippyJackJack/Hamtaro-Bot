@@ -33,5 +33,6 @@ embed:{
     footer: {
         text: 'Hamtaro Bot © High-Fox 2018'
     }
-  })
+   }
+ })
 };
