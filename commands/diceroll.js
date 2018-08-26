@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
   
   var randomSide = Math.floor(Math.random() * sides.length);
   
-  message.channel.send(sides[randomSide]);
+  message.channel.send(`You rolled a ${sides[randomSide]}!`);
   
 };
 
@@ -16,7 +16,7 @@ exports.conf = {
 
 exports.help = {
   name: "diceroll",
-  description: "Rolls a six-sided dice ^-^",
+  description: "Roll a six-sided dice ^-^",
   usage: "diceroll"
 };
   
