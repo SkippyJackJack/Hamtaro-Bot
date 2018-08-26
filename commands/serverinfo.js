@@ -1,27 +1,38 @@
 exports.run = (client, message, args) => {
+	
 	message.channel.send({embed: {
 		color: 0xf29837,
 		author: {
 		  name: message.guild.name,
       		  icon_url: message.guild.iconURL
 		},
-		title: `Info for ${message.guild.name}`,
-		description: "Here is some information about the current server.",
+		thumbnail: {
+		  url: `${message.guild.iconURL}`,
+		},
+		title: "Server Info",
 		fields: [{
-		    name: "Members",
-		    value: `${message.guild.memberCount}`
+		    name: "**Name**",
+		    value: `${message.guild.name}`,
+		    inline: true,
 		},
 		{
-		    name: "Created on:",
-		    value: `${message.guild.createdAt}`
+		    name: "**Owner**",
+		    value: `${message.guild.owner}`,
+		    inline: true,
 		},
 		{
-		    name: "Owner:",
-		    value: `${message.guild.owner}`
-		}	
+		    name: "**Created Timestamp**",
+		    value: `${message.guild.createdTimestamp}`,
+		    inline: true,
+		},
+		{
+		    name: "**Members**",
+		    value: `${message.guild.memberCount}`,
+		    inline: true,
+		},
 	   ],	
-      }
-   })
+        }
+    })
 };
 
 exports.conf = {
