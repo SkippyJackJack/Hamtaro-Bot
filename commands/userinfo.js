@@ -22,7 +22,7 @@ exports.run = (client, message, args) => {
 	      },
 	      {
 		 name: '**Account Creation Date**',
-		 value: `${message.author.createdTimestamp}`,
+		 value: `${message.author.createdAt}`,
 	      },
 	      {
 		 name: '**Bot Account**',
