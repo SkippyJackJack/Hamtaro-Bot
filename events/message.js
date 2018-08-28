@@ -2,6 +2,9 @@ module.exports = (client, message) => {
   // Ignore all bots
   if (message.author.bot) return;
   
+  // Get the guild's settings
+  const guildConf = message.serverConf = client.getGuildSettings(message.guild);
+  
   // Ignore messages not starting with the prefix (in config.json)
   if (message.content.indexOf(client.config.prefix) !== 0) return;
   
@@ -12,13 +15,8 @@ module.exports = (client, message) => {
   // If the message is just "?", ignore it
   if (!command) return;
   
-  // Grab the command data from the client.commands Enmap
-  let cmd;
-  if (client.commands.has(command)) {
-    cmd = client.commands.get(command);
-  } else if (client.aliases.has(command)) {
-    cmd = client.commands.get(client.aliases.get(command));
-  }
+  // Grab the command or alias data from the client.commands Enmap
+  const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
   // If that command doesn't exist send message
   if (!cmd) return message.channel.send("I-I don't recognise that command!");
