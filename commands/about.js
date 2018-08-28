@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, level) => {
 
   message.channel.send({embed: {
     color: 0xf29837,
@@ -27,7 +27,8 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['info', 'inf']
+  aliases: ['info', 'inf'],
+  permLevel: "User"
 };
 
 exports.help = {
