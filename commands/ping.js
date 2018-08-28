@@ -1,12 +1,11 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, level) => {
         message.channel.send('Pong!').catch(console.error);
 }
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
   aliases: [],
-  permLevel: 0
+  permLevel: "User"
 };
 
 exports.help = {
