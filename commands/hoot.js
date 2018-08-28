@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
   
   var randomOwlLink = Math.floor(Math.random() * owlLinks.length);
     
-  message.channel.send( { embed: { title: `Special Delivery for ${message.author.username}!`, color: 0xf29837, image: { url: client.getRandomImage("owl"), }, } } )
+  message.channel.send( { embed: { title: `Special Delivery for ${message.author.username}!`, color: 0xf29837, image: { url: client.hamtaroFunctions.getRandomImage("owl"), }, } } )
 };
 
 exports.conf = {
