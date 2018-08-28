@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, level) => {
   
 const bearJokes = [
   "What do you call a bear that jumps but never lands?\n**A Peter Panda!**",
@@ -15,8 +15,8 @@ const bearJokes = [
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: []
+  aliases: [],
+  permLevel: "User"
 };
 
 exports.help = {
