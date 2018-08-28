@@ -4,8 +4,8 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
     enabled: true,
-    guildOnly: false,
-    aliases: ['inv', 'invitelink', 'invlink']
+    aliases: ['inv', 'invitelink', 'invlink'],
+    permLevel: "User"
 };
 
 exports.help ={
