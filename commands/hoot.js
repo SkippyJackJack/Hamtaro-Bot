@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, level) => {
   
   var randomOwlLink = Math.floor(Math.random() * owlLinks.length);
     
