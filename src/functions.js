@@ -136,7 +136,7 @@ return bearLinks[randomBearLink];
     const def = client.serverConfig.defaultSettings;
     if (!guild) return def;
     const returns = {};
-    const overrides = client.settings.get(guild.id) || {};
+    const overrides = client.serverConfig.get(guild.id) || {};
     for (const key in def) {
       returns[key] = overrides[key] || def[key];
     }
