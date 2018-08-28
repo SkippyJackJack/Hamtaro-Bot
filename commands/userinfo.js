@@ -2,7 +2,7 @@ exports.run = (client, message, args, level) => {
   
 const memberMention = message.mentions.members.first();
 
-const member = memberMention ? message.mentions.members.first() : message.author;
+const member = memberMention ? memberMention : message.author;
 	
    message.channel.send({
       embed: {
