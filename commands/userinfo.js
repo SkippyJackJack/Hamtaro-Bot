@@ -1,6 +1,6 @@
 exports.run = (client, message, args, level) => {
   
-const memberMention = message.mentions.members.first();
+const memberMention = message.mentions.users.first();
 
 const member = memberMention ? memberMention : message.author;
 	
