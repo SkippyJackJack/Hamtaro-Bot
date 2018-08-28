@@ -1,4 +1,4 @@
-module.exports = (client, message, guild) => {
+module.exports = (client, guild) => {
 let defaultChannel = "";
 guild.channels.forEach((channel) => {
   if(channel.type == "text" && defaultChannel == "") {
