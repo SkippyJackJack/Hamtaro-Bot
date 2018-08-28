@@ -23,11 +23,7 @@ module.exports = (client, message) => {
 
   // Get the command's requires perm level, and check if the user has that perm level
   if (level < client.levelCache[cmd.conf.permLevel]) {
-     if (guildConf.systemNotice === "true") {
        return message.channel.send( { embed: { title: `You're not allowed to run that command!`, color: 0xf29837, description: `Your permission level is ${level} (${client.config.permLevels.find(l => l.level === level).name}),\nand you need to have level ${client.levelCache[cmd.conf.permLevel]} (${cmd.conf.permLevel})to use this command ;-;`, }, } );
-     } else {
-       return;
-     }
    }
 
    // To simplify message arguments, the author's level is now put on level (not member so it is supported in DMs)
@@ -39,6 +35,5 @@ module.exports = (client, message) => {
      message.flags.push(args.shift().slice(1));
    }
    // If the command exists, **AND** the user has permission, run it
-   client.logger.cmd(`[CMD] ${client.config.permLevels.find(l => l.level === level).name} ${message.author.username} (${message.author.id}) ran command ${cmd.help.name}`);
    cmd.run(client, message, args, level);
  };
