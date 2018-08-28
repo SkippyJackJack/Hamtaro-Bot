@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, level) => {
     message.reply("My master gave me this special invite link: " + client.config.inviteLink);
 };
 
