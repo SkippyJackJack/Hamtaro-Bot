@@ -1,3 +1,5 @@
+module.exports = {
+
 function getRandomImage(animal) {
   
 if (animal == "hamster") {
@@ -111,5 +113,6 @@ var randomBearLink = Math.floor(Math.random() * bearLinks.length);
   
 return bearLinks[randomBearLink];
   
-   }
+    }
+  }
 };
