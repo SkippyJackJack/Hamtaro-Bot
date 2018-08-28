@@ -7,9 +7,9 @@ const chalk = require("chalk");
 const client = new Discord.Client();
 
 const config = require("./config.json");
-const imageArrays = require("./src/imageArrays.js");
+const functions = require("./src/functions.js");
 
-client.imageArrays = imageArrays;
+client.hamtaroFunctions = functions;
 client.config = config;
 
 
