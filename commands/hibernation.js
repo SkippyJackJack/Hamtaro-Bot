@@ -1,7 +1,5 @@
 exports.run = (client, message, args) => {
   
-  if (message.author.id !== client.config.ownerID) return message.channel.send("I-I'm sorry, but you're not allowed to do that ._.");
-  
   const downtime = args.join(" ");
   
   if (!downtime) message.reply("You must tell me how long I should go into hibernation for.");
@@ -14,7 +12,7 @@ message.channel.send({embed: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: `**»** __Notice of Hibernation__ **«**`,
+    title: `» Notice of Hibernation «`,
     description: `Hamtaro Bot will now be in hibernation in order to add new features, fix some bugs and give him a rest.\nDuring this time it will be unable to receive commands and send messages to the server.`,
     fields: [{
         name: "**Hibernation Duration**",
@@ -37,8 +35,8 @@ message.channel.send({embed: {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ['maintenance']
+  aliases: ['maintenance'],
+  permLevel: "User"
 };
 
 exports.help = {
