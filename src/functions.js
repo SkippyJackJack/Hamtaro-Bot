@@ -143,6 +143,19 @@ return bearLinks[randomBearLink];
     return returns;
   };
   
+  client.awaitReply = async (msg, question, limit = 60000) => {
+    const filter = m => m.author.id === msg.author.id;
+    await msg.channel.send(question);
+    try {
+      const collected = await msg.channel.awaitMessages(filter, { max: 1, time: limit, errors: ["time"] });
+      return collected.first().content;
+    } catch (e) {
+      return false;
+    }
+  };
+  
+  client.wait = require("util").promisify(setTimeout);
+  
   process.on("uncaughtException", (err) => {
     const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
     client.logger.error(`Uncaught Exception: ${errorMsg}`);
