@@ -1,10 +1,8 @@
 exports.run = (client, message, args, level) => {
   
-if (message.mentions.users.first) {
-   const member = message.mentions.users.first();
-} else {
-   const member = message.author;
-}
+const memberMention = message.mentions.members.first();
+
+const member = memberMention ? message.mentions.members.first() : message.author;
 	
    message.channel.send({
       embed: {
