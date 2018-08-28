@@ -7,6 +7,8 @@ const chalk = require("chalk");
 const client = new Discord.Client();
 const config = require("./config.json");
 
+require("./src/imageArrays.js")(client);
+
 client.config = config;
 
 client.on("ready",() => {
