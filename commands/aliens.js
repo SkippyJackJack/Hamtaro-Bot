@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
 
 const fs = require('fs');
 const Jimp = require('jimp');
@@ -49,8 +49,8 @@ const Jimp = require('jimp');
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ['aliensmeme']
+  aliases: ['aliensmeme'],
+  permLevel: "User"
 };
 
 exports.help = {
