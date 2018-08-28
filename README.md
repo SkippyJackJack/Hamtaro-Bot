@@ -1,6 +1,6 @@
 # Hamtaro-Bot 
 An adorable little hamster for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
-##### Submit issues and bugs [here.](https://github.com/High-Fox/Hamtoro-Bot/Issues/)
+##### Submit issues and bugs [here.](https://github.com/High-Fox/Hamtaro-Bot/issues)
 ###### Created by [High-Fox](https://github.com/High-Fox/)
 
 ---
