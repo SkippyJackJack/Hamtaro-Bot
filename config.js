@@ -3,6 +3,8 @@ const config = {
   // The following can not be changed by users:
   "ownerID": "428783792275193868",
   
+  "prefix": "?",
+  
   "admins": [],
   "support": [],
   
@@ -13,7 +15,6 @@ const config = {
   // Default server config
   "defaultConfig" : {
     
-    "prefix": "?",
     "modRole": "Mod",
     "adminRole": "Admin",
     
