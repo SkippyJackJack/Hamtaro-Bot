@@ -1,6 +1,6 @@
-module.exports = {
+module.exports = (client) => {
 
-function getRandomImage(animal) {
+client.getRandomImage = async (animal) => {
   
 if (animal == "hamster") {
   
@@ -113,6 +113,18 @@ var randomBearLink = Math.floor(Math.random() * bearLinks.length);
   
 return bearLinks[randomBearLink];
   
-    }
-  }
+   }
+};
+  
+  process.on("uncaughtException", (err) => {
+    const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
+    client.logger.error(`Uncaught Exception: ${errorMsg}`);
+    // Always best practice to let the code crash on uncaught exceptions. 
+    // Because you should be catching them anyway.
+    process.exit(1);
+  });
+
+  process.on("unhandledRejection", err => {
+    client.logger.error(`Unhandled rejection: ${err}`);
+  });
 };
