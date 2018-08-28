@@ -116,7 +116,7 @@ return bearLinks[randomBearLink];
    }
 };
   
-  client.permlevel = message => {
+  client.permLevel = message => {
     let permlvl = 0;
 
     const permOrder = client.config.permLevels.slice(0).sort((p, c) => p.level < c.level ? 1 : -1);
