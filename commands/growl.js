@@ -1,4 +1,3 @@
-const bearLinks = require("../src/imageArrays/growl.json");
 exports.run = (client, message, args) => {
   
 const bearJokes = [
@@ -9,11 +8,9 @@ const bearJokes = [
   "I'm sorry I make bad jokes, please **BEAR** with me for a second."
 ];
   
-  var randomBearJoke = Math.floor(Math.random() * bearJokes.length);
-  
-  var randomBearLink = Math.floor(Math.random() * bearLinks.length);
+  var randomBearJoke = Math.floor(Math.random() * bearJokes.length); 
     
-  message.channel.send( { embed: { title: bearJokes[randomBearJoke], color: 0xf29837, image: { url: bearLinks[randomBearLink], }, } } );
+  message.channel.send( { embed: { title: bearJokes[randomBearJoke], color: 0xf29837, image: { url: client.getRandomImage(bear), }, } } );
 };
 
 exports.conf = {
