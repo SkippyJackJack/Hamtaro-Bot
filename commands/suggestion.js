@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
 
   let suggestionText = args.join(" ");
 
@@ -6,14 +6,14 @@ exports.run = async (client, message, args) => {
   let user = client.fetchUser(client.config.ownerID)
    .then(user => {
       // Once promise returns with user, send user a DM
-      user.send(`**From:** ${message.author.username} (${message.author.id})\n**Text: **` + suggestionText); 
+      user.send(`**From:** ${message.author.username} (ID: ${message.author.id})\n**Text: **` + suggestionText); 
    })
 };
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ['suggest']
+  aliases: ['suggest'],
+  permLevel: "User"
 };
 
 exports.help = {
