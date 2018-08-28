@@ -1,32 +1,38 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, level) => {
   
+if (message.mentions.users.first) {
+   const member = message.mentions.users.first();
+} else {
+   const member = message.author;
+}
+	
    message.channel.send({
       embed: {
 	  color: 0xf29837,
 	  author: {
-	       name: "__*User Info*__",
+	       name: "User Info",
 	  },
 	  thumbnail: {
-	       url: `${message.author.avatarURL}`,
+	       url: `${member.avatarURL}`,
 	  },
 	  fields: [
 	      {
 		 name: '**Username**',
-		 value: `${message.author.username}`,
+		 value: `${member.username}`,
 		 inline: true,
 	      },
 	      {
 		 name: '**ID**',
-		 value: `${message.author.id}`,
+		 value: `${member.id}`,
 		 inline: true,
 	      },
 	      {
 		 name: '**Account Creation Date**',
-		 value: `${message.author.createdAt}`,
+		 value: `${member.createdAt}`,
 	      },
 	      {
 		 name: '**Bot Account**',
-		 value: `${message.author.bot}`,
+		 value: `${member.bot}`,
 	      },
 	   ],
         }
@@ -35,12 +41,12 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
   aliases: ['userinf'],
+  permLevel: "User"
 };
 
 exports.help = {
   name: 'userinfo',
-  description: 'Get information about yourself!',
+  description: 'Get information about yourself or another user!',
   usage: 'userinfo'
 };
