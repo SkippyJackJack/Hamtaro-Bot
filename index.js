@@ -8,19 +8,19 @@ const fs = require("fs");
 const { promisify } = require("util");
 const chalk = require("chalk");
 
-const config = require("./config.json");
 const functions = require("./src/functions.js");
 
 client.hamtaroFunctions = functions;
-client.config = config;
+client.config = require("./config.js");
 
+client.serverConfig = new Enmap({provider: new EnmapLevel({name: "serverConfig"})});
 
 client.on("ready",() => {
   console.log(chalk.bgCyan.black(`Online and active on ${client.guilds.size} servers.`));
   client.user.setActivity(client.config.prefix + 'help', {type: 'WATCHING'});
 });
 
-
+const init() = async () => {
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -45,4 +45,14 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
+client.levelCache = {};
+  for (let i = 0; i < client.config.permLevels.length; i++) {
+    const thisLevel = client.config.permLevels[i];
+    client.levelCache[thisLevel.name] = thisLevel.level;
+ } 
+
 client.login(process.env.TOKEN);
+
+};
+
+init();
