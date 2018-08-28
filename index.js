@@ -1,10 +1,12 @@
 // Define variables and libraries needed
 const Discord = require("discord.js");
+const client = new Discord.Client();
+
 const Enmap = require("enmap");
+const EnmapLevel = require("enmap-sqlite");
 const fs = require("fs");
 const { promisify } = require("util");
 const chalk = require("chalk");
-const client = new Discord.Client();
 
 const config = require("./config.json");
 const functions = require("./src/functions.js");
