@@ -116,6 +116,17 @@ return bearLinks[randomBearLink];
    }
 };
   
+  client.getGuildSettings = (guild) => {
+    const def = client.serverConfig.defaultSettings;
+    if (!guild) return def;
+    const returns = {};
+    const overrides = client.settings.get(guild.id) || {};
+    for (const key in def) {
+      returns[key] = overrides[key] || def[key];
+    }
+    return returns;
+  };
+  
   process.on("uncaughtException", (err) => {
     const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
     client.logger.error(`Uncaught Exception: ${errorMsg}`);
