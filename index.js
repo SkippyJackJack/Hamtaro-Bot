@@ -5,16 +5,18 @@ const fs = require("fs");
 const { promisify } = require("util");
 const chalk = require("chalk");
 const client = new Discord.Client();
-const config = require("./config.json");
 
-require("./src/imageArrays.js")(client);
+const config = require("./config.json");
+const imageArrays = require("./src/imageArrays.js");
 
 client.config = config;
+
 
 client.on("ready",() => {
   console.log(chalk.bgCyan.black(`Online and active on ${client.guilds.size} servers.`));
   client.user.setActivity(client.config.prefix + 'help', {type: 'WATCHING'});
 });
+
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
