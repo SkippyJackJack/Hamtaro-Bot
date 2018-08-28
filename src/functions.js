@@ -158,13 +158,13 @@ return bearLinks[randomBearLink];
   
   process.on("uncaughtException", (err) => {
     const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
-    client.logger.error(`Uncaught Exception: ${errorMsg}`);
+    console.log(`Uncaught Exception: ${errorMsg}`);
     // Always best practice to let the code crash on uncaught exceptions. 
     // Because you should be catching them anyway.
     process.exit(1);
   });
 
   process.on("unhandledRejection", err => {
-    client.logger.error(`Unhandled rejection: ${err}`);
+    console.log(`Unhandled rejection: ${err}`);
   });
 };
