@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, level) => {
   
   const sides = [ "1", "2", "3", "4", "5", "6" ];
   
@@ -10,8 +10,8 @@ exports.run = (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ['rolldice']
+  aliases: ['rolldice'],
+  permLevel: "User"
 };
 
 exports.help = {
