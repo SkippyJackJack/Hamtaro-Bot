@@ -9,6 +9,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const imageArrays = require("./src/imageArrays.js");
 
+client.imageArrays = imageArrays;
 client.config = config;
 
 
