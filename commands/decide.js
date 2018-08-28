@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, level) => {
 
   const decideResponse = [
     'Yes',
@@ -54,8 +54,8 @@ exports.run = (client, message, args) => {
   
   exports.conf = {
     enabled: true,
-    guildOnly: false,
-    aliases: ['decision']
+    aliases: ['decision'],
+    permLevel: "User"
   };
   
   exports.help = {
