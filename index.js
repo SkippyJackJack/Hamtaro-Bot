@@ -26,7 +26,7 @@ client.on("ready",() => {
 });
 
 
-const init() = async () => {
+const init = async () => {
   
   fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
