@@ -9,7 +9,7 @@ const config = {
   "support": [],
   
   "inviteLink": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
-  "version": "0.0.0 [In-Development]",
+  "version": "0.0.0",
   
   
   // Default server config
@@ -30,12 +30,6 @@ const config = {
     "newMemberAnnouncementChannel": "general",
     "newTextChannelAnnouncement": "Welcome to the server {{member}}!",
     
-    "aboutEmbedColour": "0xf29837",
-    "growlEmbedColour": "0xf29837",
-    "hootEmbedColour": "0xf29837",
-    "squeakEmbedColour": "0xf29837",
-    "serverInfoEmbedColour": "0xf29837",
-    "userInfoEmbedColour": "0xf29837"
   },
   
     permLevels: [
