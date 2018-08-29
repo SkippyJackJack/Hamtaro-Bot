@@ -9,7 +9,7 @@ exports.run = (client, message, args, level) => {
     let output = `[Use ${client.config.prefix}help <commandname> for details]\n`;
     const sorted = myCommands.array().sort((p, c) => p.help.name > c.help.name ? 1 : -1 );
     sorted.forEach( c => {
-      output += `${message.settings.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)}: ${c.help.description}\n`;
+      output += `${client.config.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)}: ${c.help.description}\n`;
     });
     message.channel.send(output, {code: "asciidoc", split: { char: "\u200b" }});
   } else {
