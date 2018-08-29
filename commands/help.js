@@ -6,11 +6,8 @@ exports.run = (client, message, args, level) => {
     const commandNames = myCommands.keyArray();
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
-    let output = `[Use ${client.config.prefix}help <commandname> for details]\n`;
+    let output = `[Use ${client.config.prefix}help <commandname> for details]\n${client.config.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)}: ${c.help.description}\n`;
     const sorted = myCommands.array().sort((p, c) => p.help.name > c.help.name ? 1 : -1 );
-    sorted.forEach( c => {
-      output += `${client.config.prefix}${c.help.name}${" ".repeat(longest - c.help.name.length)}: ${c.help.description}\n`;
-    });
     message.channel.send(output, {code: "asciidoc", split: { char: "\u200b" }});
   } else {
     let command = args[0];
