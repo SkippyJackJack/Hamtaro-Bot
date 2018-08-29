@@ -4,9 +4,9 @@ const client = new Discord.Client();
 
 const Enmap = require("enmap");
 const EnmapLevel = require("enmap-sqlite");
-const fs = require("fs");
 const { promisify } = require("util");
 const chalk = require("chalk");
+const fs = promisify(require("fs"));
 
 client.config = require("./config.js");
 
