@@ -12,12 +12,10 @@ client.config = require("./config.js");
 
 require("./src/functions.js")(client);
 
+client.commands = new Enmap();
+client.aliases = new Enmap();
 
 client.serverConfig = new Enmap({provider: new EnmapLevel({name: "serverConfig"})});
-
-
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
 
 
 client.on("ready",() => {
@@ -28,26 +26,23 @@ client.on("ready",() => {
 
 const init = async () => {
   
-  fs.readdir("./events/", (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-      const event = require(`./events/${file}`);
-      let eventName = file.split(".")[0];
-      client.on(eventName, event.bind(null, client));
-    });
+ const cmdFiles = await fs.readdir("./commands/");
+  console.log(`Loading a total of ${cmdFiles.length} commands.`);
+  cmdFiles.forEach(f => {
+    if (!f.endsWith(".js")) return;
+    const response = client.loadCommand(f);
+    if (response) console.log(response);
   });
 
-  fs.readdir('./commands/', (err, files) => {
-    if (err) console.error(err);
-    console.log(`Loading a total of ${files.length} commands.`);
-    files.forEach(f => {
-      let props = require(`./commands/${f}`);
-      console.log(`Loading Command: ${props.help.name}`);
-      client.commands.set(props.help.name, props);
-      props.conf.aliases.forEach(alias => {
-        client.aliases.set(alias, props.help.name);
-      });
-    });
+  // Then we load events, which will include our message and ready event.
+  const evtFiles = await fs.readdir("./events/");
+  console.log(`Loading a total of ${evtFiles.length} events.`);
+  evtFiles.forEach(file => {
+    const eventName = file.split(".")[0];
+    const event = require(`./events/${file}`);
+    // This line is awesome by the way. Just sayin'.
+    client.on(eventName, event.bind(null, client));
+    delete require.cache[require.resolve(`./events/${file}`)];
   });
 
   client.levelCache = {};
