@@ -3,7 +3,7 @@ module.exports = (client, message) => {
   if (message.author.bot) return;
   
   // Get the guild's settings
-  const guildConf = message.serverConf = client.getGuildSettings(message.guild);
+  const serverConfig = message.serverConfig = client.getGuildSettings(message.guild);
   
   // Ignore messages not starting with the prefix (in config.json)
   if (message.content.indexOf(client.config.prefix) !== 0) return;
@@ -12,7 +12,9 @@ module.exports = (client, message) => {
   const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
+  // Get the users perms
   const level = client.permLevel(message)
+  
   // If the message is just "?", ignore it
   if (!command) return;
   
