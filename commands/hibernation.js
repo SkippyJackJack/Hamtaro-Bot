@@ -36,7 +36,7 @@ message.channel.send({embed: {
 exports.conf = {
   enabled: true,
   aliases: ['maintenance'],
-  permLevel: "User"
+  permLevel: "Bot Owner"
 };
 
 exports.help = {
