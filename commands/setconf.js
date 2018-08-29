@@ -51,7 +51,7 @@ exports.run = async (client, message, [action, key, ...value], level) => {
     }
   } else
   
-  if (action === "get") {
+  if (action === "view") {
     if (!key) return message.reply("Please specify a key to view");
     if (!settings[key]) return message.reply("This key does not exist in the settings");
     const isDefault = !overrides[key] ? "\nThis is the default global default value." : "";
@@ -70,5 +70,5 @@ exports.conf = {
 exports.help = {
   name: "setconf",
   description: "View or change settings for your server.",
-  usage: "setconf [view/get/edit] <key> <value>"
+  usage: "setconf [view/edit/reset] <key> <value>"
 };
