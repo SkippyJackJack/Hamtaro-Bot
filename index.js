@@ -6,7 +6,7 @@ const Enmap = require("enmap");
 const EnmapLevel = require("enmap-sqlite");
 const { promisify } = require("util");
 const chalk = require("chalk");
-const fs = promisify(require("fs"));
+const readdir = promisify(require("fs").readdir);
 
 client.config = require("./config.js");
 
@@ -26,7 +26,7 @@ client.on("ready",() => {
 
 const init = async () => {
   
- const cmdFiles = await fs.readdir("./commands/");
+ const cmdFiles = await readdir("./commands/");
   console.log(`Loading a total of ${cmdFiles.length} commands.`);
   cmdFiles.forEach(f => {
     if (!f.endsWith(".js")) return;
@@ -35,7 +35,7 @@ const init = async () => {
   });
 
   // Then we load events, which will include our message and ready event.
-  const evtFiles = await fs.readdir("./events/");
+  const evtFiles = await readdir("./events/");
   console.log(`Loading a total of ${evtFiles.length} events.`);
   evtFiles.forEach(file => {
     const eventName = file.split(".")[0];
