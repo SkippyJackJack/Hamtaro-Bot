@@ -16,13 +16,9 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   
   const code = args.join(" ");
   
-  client.wait = require("util").promisify(setTimeout);
-  
   try {
     const evaled = eval(code);
     const clean = await client.clean(client, evaled);
-    
-    console.log(`\`\`\`js\n${clean}\n\`\`\``);
     
   } catch (err) {
     console.log("Error executing ?eval command");
