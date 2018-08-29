@@ -24,11 +24,11 @@ const config = {
     
     "announceNewVoiceChannels": "true",
     "newVoiceChannelAnnouncementChannel": "general",
-    "newTextChannelAnnouncement": "The voice channel {{channel}} was just created!",
+    "newVoiceChannelAnnouncement": "The voice channel {{channel}} was just created!",
     
     "announceNewMembers": "true",
     "newMemberAnnouncementChannel": "general",
-    "newTextChannelAnnouncement": "Welcome to the server {{member}}!",
+    "newMemberAnnouncementMessage": "Welcome to the server {{member}}!",
     
   },
   
