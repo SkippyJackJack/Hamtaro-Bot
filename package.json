@@ -28,7 +28,7 @@
     "chalk": "^2.3.0",
     "discord.js": "^11.3.2",
     "enmap": "latest",
-    "enmap-sqlite": "latest",
+    "enmap-sqlite": "^4.0.0",
     "jimp": "latest"
   }
 }
