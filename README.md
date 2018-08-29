@@ -9,6 +9,8 @@ An adorable little hamster for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 
 ---
 
+## Contents:
+* [Setup Instructions](#setup-instructions:)
 #### Setup Instructions:
 1. [Invite the bot to your server.](#invite-me)
 2. Make sure the bot has permission to send messages in **at least one** text channel.
