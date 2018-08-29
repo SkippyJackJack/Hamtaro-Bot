@@ -16,4 +16,3 @@ An adorable little hamster for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 * Create your own *[Aliens](https://vignette.wikia.nocookie.net/unanything/images/7/75/Aliens.jpg/revision/latest?cb=20140727153108)* memes!
 * Customizable settings to make your Hamtaro Bot unique to your server!
   
-#hello
