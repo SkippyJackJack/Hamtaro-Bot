@@ -133,7 +133,7 @@ return bearLinks[randomBearLink];
   };
   
   client.getGuildSettings = (guild) => {
-    const def = client.serverConfig.defaultSettings;
+    const def = client.serverConfig.defaultConfig;
     if (!guild) return def;
     const returns = {};
     const overrides = client.serverConfig.get(guild.id) || {};
