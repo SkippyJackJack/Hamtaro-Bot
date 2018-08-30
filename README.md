@@ -33,8 +33,8 @@ These are the key names you can change or view with `?setconf [view/edit/reset] 
 
 
 * `announceNewMembers`: **Boolean (true/false)** : Whether to send a welcome message to a channel when a new member joins the server.
-* `newMemberAnnouncementChannel`: **String** : Name of the channel that new member welcome messages will be sent to.
-* `newMemberAnnouncementChannel`: **String** : Message to send when a new member joins the server. **Use {{member}} to show the name of the new member**
+... `newMemberAnnouncementChannel`: **String** : Name of the channel that new member welcome messages will be sent to.
+... `newMemberAnnouncementChannel`: **String** : Message to send when a new member joins the server. **Use {{member}} to show the name of the new member**
 * `announceNewTextChannels`: **Boolean (true/false)** : Whether to send a message to a channel when a new text channel is created.
 * `newTextChannelAnnouncementChannel`: **String** : Name of the channel that new text channel messages will be sent to.
 * `newTextChannelAnnouncementChannel`: **String** : Message to send when a new text channelis created. **Use {{channel}} to show the name of the new channel*
