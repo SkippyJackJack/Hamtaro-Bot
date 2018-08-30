@@ -30,6 +30,10 @@ const config = {
     "newMemberAnnouncementChannel": "general",
     "newMemberAnnouncementMessage": "Welcome to the server {{member}}!",
     
+    "announceNewBans": "true",
+    "newBanAnnouncementChannel": "general",
+    "newBanAnnouncementMessage": "{{member}} was just banned from the server!"
+    
   },
   
     permLevels: [
