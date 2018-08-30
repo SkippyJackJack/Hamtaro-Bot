@@ -10,7 +10,11 @@ exports.run = (client, message, args, level) => {
     'Without a doubt',
     'Doubtful',
     'Possibly',
-    'NO!! (╯°□°）╯︵ ┻━┻)'
+    'NO!! (╯°□°）╯︵ ┻━┻)',
+    'No, no, no, no...',
+    'The voices are telling me \"yes\"...',
+    'Pfffft... no',
+    'Oh, YES!'
   ];
   
   var randomResponse = Math.floor(Math.random() * decideResponse.length);
