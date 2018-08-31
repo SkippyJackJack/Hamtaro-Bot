@@ -39,11 +39,11 @@ These are the key names you can change or view with `?setconf [view/edit/reset] 
    
 * `announceNewTextChannels`: **Boolean (true/false)** : Whether to send a message to a channel when a new text channel is created.
   * `newTextChannelAnnouncementChannel`: **String** : Name of the channel that new text channel messages will be sent to.
-  * `newTextChannelAnnouncementChannel`: **String** : Message to send when a new text channelis created. **Use {{channel}} to show the name of the new channel*
+  * `newTextChannelAnnouncementChannel`: **String** : Message to send when a new text channelis created. **Use {{channel}} to show the name of the new channel**
   
 * `announceNewVoiceChannels`: **Boolean (true/false)** : Whether to send a message to a channel when a new voice channel is created.
   * `newVoiceChannelAnnouncementChannel`: **String** : Name of the channel that new voice channel messages will be sent to.
-  * `newVoiceChannelAnnouncementChannel`: **String** : Message to send when a new voice channelis created. **Use {{channel}} to show the name of the new channel*
+  * `newVoiceChannelAnnouncementChannel`: **String** : Message to send when a new voice channelis created. **Use {{channel}} to show the name of the new channel**
 
 ---
 
