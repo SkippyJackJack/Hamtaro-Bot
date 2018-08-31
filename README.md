@@ -10,8 +10,8 @@ An adorable little hamster for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 ---
 
 ## Contents:
-* [Setup Instructions](#setup-instructions:)
-* [Config List](#config-list:)
+* [Setup Instructions](#setup-instructions)
+* [Config List](#config-list)
 
 ---
 
