@@ -15,7 +15,7 @@ const Jimp = require('jimp');
         image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
         
         Jimp.loadFont('../src/fonts/impact/impact.fnt').then(function(font) {
-          image.print(font, 240, 578, text.toUpperCase(), Jimp.ALIGN_FONT_CENTER).getBufferAsync(Jimp.MIME_JPEG);
+          image.print(font, 240, 578, text.toUpperCase(), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, uselessCallback);
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
             image.write(outputfile, function () {
@@ -36,6 +36,11 @@ const Jimp = require('jimp');
         
       message.channel.stopTyping();
     })
+    
+    function uselessCallback(err) {
+        if (err) message.channel.send(";-; I-I couldn't create the image, sorry.");
+        message.channel.stopTyping();
+    };
     
     message.channel.stopTyping();
 };
