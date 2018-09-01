@@ -29,6 +29,7 @@ An adorable little hamster for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 ### Config List:
 These are the key names you can change or view with `?setconf [view/edit/reset] <key name>`. 
 > **(Key names are case sensitive)**
+
 * `modRole`: **String** : Name of the role that has moderator permissions.
 * `adminRole`: **String** : Name of the role that has administrator permissions.
 
@@ -51,6 +52,6 @@ These are the key names you can change or view with `?setconf [view/edit/reset] 
 #### Features:
 * Adorable random image commands to lighten up the mood and make you go *awwwww!* ヽ(^◇^*)/
 * A decision maker to help settle an argument or a hard choice to be made.
-* Create your own memes without leaving discord!
+* Create your own memes for laughs!
 * Customizable settings to make your Hamtaro Bot unique to your server!
   
