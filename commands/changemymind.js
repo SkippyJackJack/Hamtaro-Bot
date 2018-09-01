@@ -46,12 +46,12 @@ const Jimp = require('jimp');
 
 exports.conf = {
   enabled: true,
-  aliases: ['aliensmeme'],
+  aliases: ['changemind'],
   permLevel: "User"
 };
 
 exports.help = {
-  name: "aliens",
-  description: "Make your own \'Aliens\' meme.",
-  usage: "aliens [text]"
+  name: "changemymind",
+  description: "Make your own Steven Crowder \'Change My Mind\' sign!",
+  usage: "changemymind [text]"
 };
