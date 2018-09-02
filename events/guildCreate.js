@@ -1,13 +1,7 @@
 module.exports = (client, guild) => {
   
-  let defaultChannel = "";
-  guild.channels.forEach((channel) => {
-    if(channel.type == "text" && defaultChannel == "") {
-      if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
-        defaultChannel = channel;
-      }
-    }
-  })
+const defaultChannel = client.getDefaultChannel(guild);
+  
   defaultChannel.send(`*Squeak!* Thanks for inviting me to your server! H-Here's some info about me, if you're interested. ◕ ◡ ◕`, {
   embed:{
       author: {
