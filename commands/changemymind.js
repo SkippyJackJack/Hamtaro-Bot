@@ -14,7 +14,7 @@ const Jimp = require('jimp');
     Jimp.read('https://pm1.narvii.com/6763/81ea6408b036dddef541463ef9d46bf5783ff129v2_hq.jpg').then(function (image) {     
         
         Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function(font) {
-          image.print(font, 141, 292, text.toUpperCase()).getBufferAsync(Jimp.MIME_JPEG);
+          image.print(font, 141, 292, { text: text.toUpperCase(), alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER }, 280).getBufferAsync(Jimp.MIME_JPEG);
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
             image.write(outputfile, function () {
@@ -23,7 +23,7 @@ const Jimp = require('jimp');
                     
                     fs.unlink(outputfile, (err) => {
                         if (err) throw err;
-                        console.log("Image Created");
+                        console.log(`Image Created in Guild: ${message.guild.name}`);
                         message.channel.stopTyping();
             });
           });
