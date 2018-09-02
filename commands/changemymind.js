@@ -9,10 +9,10 @@ const Jimp = require('jimp');
         return message.reply("But you have to give me text ._.");
     };
     
-    var isLongText = text.length >= 34 ? "true" : "false";
+    var isLongText = text.length >= 34 ? Jimp.FONT_SANS_16_BLACK : Jimp.FONT_SANS_32_BLACK;
     
-    function getTextSize() {
-        if (isLongText !== "true") {
+    function getTextSize(length) {
+        if (length >= 34) {
             return Jimp.FONT_SANS_16_BLACK;
         } else {
             return Jimp.FONT_SANS_32_BLACK;
@@ -23,7 +23,7 @@ const Jimp = require('jimp');
     
     Jimp.read('https://pm1.narvii.com/6763/81ea6408b036dddef541463ef9d46bf5783ff129v2_hq.jpg').then(function (image) {     
         
-        Jimp.loadFont(getTextSize()).then(function(font) {
+        Jimp.loadFont(isLongText).then(function(font) {
           image.print(font, 148, 292, { text: text.toUpperCase(), alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER }, 280).getBufferAsync(Jimp.MIME_JPEG);
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
