@@ -188,7 +188,7 @@ return bearLinks[randomBearLink];
   };
   
   client.getDefaultChannel = async (guild) => {
-    message.guild.channels.forEach((channel) => {
+    guild.channels.forEach((channel) => {
       if(channel.type == "text") {
         if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
           return channel;
