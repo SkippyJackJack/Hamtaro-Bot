@@ -187,6 +187,17 @@ return bearLinks[randomBearLink];
     return false;
   };
   
+  client.getDefaultChannel = async (guild) => {
+    message.guild.channels.forEach((channel) => {
+      if(channel.type == "text") {
+        if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+          return channel;
+        }
+      }
+    })
+  };
+    
+  
   String.prototype.toProperCase = function() {
     return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   }; 
