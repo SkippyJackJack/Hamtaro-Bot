@@ -20,6 +20,6 @@ client.commandList = [
     "suggestion",
     "userinfo"
 
-  ];
+  ]
   
 };
