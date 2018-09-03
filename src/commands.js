@@ -1,6 +1,6 @@
 module.exports = {
   
-  const commandList = [
+client.commandList = [
   
     "about",
     "aliens",
