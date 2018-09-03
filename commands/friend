@@ -1,5 +1,10 @@
 exports.run = (client, message, level) => {
-        message.channel.send('Forever!').catch(console.error);
+
+const responses = ["Forever!", "Never!" ];
+
+const randomResponse = Math.floor(Math.random() * responses.length);
+
+        message.channel.send(responses[randomResponse]).catch(console.error);
 }
 
 exports.conf = {
