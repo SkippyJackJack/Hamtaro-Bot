@@ -11,6 +11,8 @@ const readdir = promisify(require("fs").readdir);
 client.config = require("./config.js");
 
 require("./src/functions.js")(client);
+require("./src/commands.js")(client);
+
 
 client.commands = new Enmap();
 client.aliases = new Enmap();
