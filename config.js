@@ -6,7 +6,7 @@ const config = {
   "prefix": "?",
   
   "admins": [],
-  "support": ['242638287712288768'],
+  "support": [],
   
   "inviteLink": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
   "version": "0.0.0",
@@ -37,6 +37,11 @@ const config = {
   },
   
     permLevels: [
+      
+     { level: -1,
+      name: "Xavier", 
+      check: () => true
+    },
       
     // This is the lowest permisison level, this is for non-roled users.
     { level: 0,
