@@ -14,8 +14,8 @@ const Jimp = require('jimp');
     Jimp.read('https://imgflip.com/s/meme/Ancient-Aliens.jpg').then(function (image) {     
         image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
         
-        Jimp.loadFont('../src/fonts/impact/impact.fnt').then(function(font) {
-          image.print(font, 240, 578, text.toUpperCase(), Jimp.ALIGN_FONT_CENTER).getBuffer(Jimp.MIME_JPEG, uselessCallback);
+        await Jimp.loadFont("../src/fonts/impact/impact.fnt").then(function(font) {
+          image.print(font, 117, 213, text.toUpperCase(), Jimp.HORIZONTAL_ALIGN_CENTER, 213).getBufferAsync(Jimp.MIME_JPEG);
 
         let outputfile = "./" + Math.random().toString(15).substr(2, 5) + "." + image.getExtension();
             image.write(outputfile, function () {
@@ -24,7 +24,7 @@ const Jimp = require('jimp');
                     
                     fs.unlink(outputfile, (err) => {
                         if (err) throw err;
-                        console.log("Image Created");
+                        console.log(`Image Created in Guild: ${message.guild.name}`);
                         message.channel.stopTyping();
             });
           });
@@ -32,15 +32,10 @@ const Jimp = require('jimp');
       });
     }).catch(function (err) {
       console.error(err);
-      message.channel.send(";-; I-I couldn't create the image, sorry.")
+      message.channel.send(";-; I-I couldn't create the image, sorry.");
         
       message.channel.stopTyping();
     })
-    
-    function uselessCallback(err) {
-        if (err) message.channel.send(";-; I-I couldn't create the image, sorry.");
-        message.channel.stopTyping();
-    };
     
     message.channel.stopTyping();
 };
