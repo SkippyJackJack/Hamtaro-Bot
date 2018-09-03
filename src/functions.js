@@ -157,8 +157,7 @@ return bearLinks[randomBearLink];
   client.loadCommand = (commandName) => {
     try {
       const props = require(`../commands/${commandName}`);
-      const cl = require('./commands.js');
-      const isNewCommand = cl.commandList.includes(props.help.name) ? "true" : "false";
+      const isNewCommand = client.commandList.includes(props.help.name) ? "true" : "false";
       
       // Send message to every guild when a new command is added
       if (isNewCommand == "true") {
