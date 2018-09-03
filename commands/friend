@@ -1,0 +1,15 @@
+exports.run = (client, message, level) => {
+        message.channel.send('Forever!').catch(console.error);
+}
+
+exports.conf = {
+  enabled: true,
+  aliases: [],
+  permLevel: "User"
+};
+
+exports.help = {
+  name: 'friend',
+  description: 'Are we friends?',
+  usage: 'friend'
+};
