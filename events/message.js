@@ -38,5 +38,10 @@ module.exports = (client, message) => {
      message.flags.push(args.shift().slice(1));
    }
    // If the command exists, **AND** the user has permission, run it
-   cmd.run(client, message, args, level);
+   if (cmd.conf.enabled == true) {
+     cmd.run(client, message, args, level);
+   } else {
+     message.channel.reply("That command has been temporarily disabled, and will be available soon. Sorry for the inconvenience! ^-^");
+   }
+  
  };
