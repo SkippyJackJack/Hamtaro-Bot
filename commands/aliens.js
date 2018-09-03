@@ -11,7 +11,7 @@ const Jimp = require('jimp');
     
     message.channel.startTyping();
     
-    Jimp.read('https://imgflip.com/s/meme/Ancient-Aliens.jpg').then(function (image) {     
+    Jimp.read('https://imgflip.com/s/meme/Ancient-Aliens.jpg').then(async function(image) {     
         image.resize(1024, 1024, Jimp.RESIZE_BEZIER);
         
         await Jimp.loadFont("../src/fonts/impact/impact.fnt").then(function(font) {
