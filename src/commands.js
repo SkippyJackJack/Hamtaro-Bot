@@ -20,4 +20,4 @@ const commandList = [
   "suggestion",
   "userinfo"
 
-]
+];
