@@ -6,7 +6,7 @@ const config = {
   "prefix": "?",
   
   "admins": [],
-  "support": [],
+  "support": ['242638287712288768'],
   
   "inviteLink": "https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot",
   "version": "0.0.0",
