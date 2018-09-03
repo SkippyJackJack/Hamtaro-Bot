@@ -1,23 +1,25 @@
-module.exports = (client) => {
+module.exports = {
   
-const commandList = [
+  const commandList = [
   
-  "about",
-  "aliens",
-  "changemymind",
-  "decide",
-  "diceroll",
-  "eval",
-  "growl",
-  "help",
-  "hibernation",
-  "hoot",
-  "invite",
-  "ping",
-  "serverinfo",
-  "setconf",
-  "squeak",
-  "suggestion",
-  "userinfo"
+    "about",
+    "aliens",
+    "changemymind",
+    "decide",
+    "diceroll",
+    "eval",
+    "growl",
+    "help",
+    "hibernation",
+    "hoot",
+    "invite",
+    "ping",
+    "serverinfo",
+    "setconf",
+    "squeak",
+    "suggestion",
+    "userinfo"
 
+  ]
+  
 ];
