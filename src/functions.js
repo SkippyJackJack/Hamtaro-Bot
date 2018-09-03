@@ -165,7 +165,9 @@ return bearLinks[randomBearLink];
        client.guilds.forEach((guild) => {
         const firstTextChannel = await client.getDefaultChannel(guild);
          
-        firstTextChannel.send( { embed: { title: "Notice of new command!", color: 0xf29837, fields: [{ name: "Name:", value: `${props.help.name}`, inline: true }, { name: "Description:", value: `${props.help.description}`, inline: true } ], } } );  
+        firstTextChannel.send( { embed: { title: "Notice of new command!", color: 0xf29837, fields: [{ name: "Name:", value: `${props.help.name}`, inline: true }, { name: "Description:", value: `${props.help.description}`, inline: true } ], } } );
+        
+        cl.commandList.push(props.help.name);
        })
       };
       
