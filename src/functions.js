@@ -132,7 +132,7 @@ return bearLinks[randomBearLink];
     return permlvl;
   };
   
-  client.getGuildSettings = (guild) => {
+  client.getGuildSettings = async (guild) => {
     const def = client.serverConfig.defaultConfig;
     if (!guild) return def;
     const returns = {};
@@ -154,7 +154,7 @@ return bearLinks[randomBearLink];
     }
   };
   
-  client.loadCommand = (commandName) => {
+  client.loadCommand = async (commandName) => {
     try {
       const props = require(`../commands/${commandName}`);
       const cl = require('./commands.js');
