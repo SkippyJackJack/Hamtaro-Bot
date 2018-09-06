@@ -41,7 +41,7 @@ const Jimp = require('jimp');
 };
 
 exports.conf = {
-  enabled: true,
+  enabled: false,
   aliases: ['aliensmeme'],
   permLevel: "User"
 };
