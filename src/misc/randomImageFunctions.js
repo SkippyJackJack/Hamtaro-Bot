@@ -113,5 +113,6 @@ var randomBearLink = Math.floor(Math.random() * bearLinks.length);
   
 return bearLinks[randomBearLink];
   
-   }
+    }
+  }
 };
