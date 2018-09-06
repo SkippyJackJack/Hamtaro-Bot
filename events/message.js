@@ -41,7 +41,7 @@ module.exports = (client, message) => {
    if (cmd.conf.enabled == true) {
      cmd.run(client, message, args, level);
    } else {
-     message.channel.reply("That command has been temporarily disabled, and will be available soon. Sorry for the inconvenience! ^-^");
+     message.channel.send("That command has been temporarily disabled, and will be available soon. Sorry for the inconvenience! ^-^");
    }
   
  };
