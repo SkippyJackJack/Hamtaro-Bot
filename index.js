@@ -12,6 +12,7 @@ client.config = require("./config.js");
 
 require("./src/functions.js")(client);
 require("./src/commands.js")(client);
+require("./src/misc/randomImageFunctions.js")(client);
 
 
 client.commands = new Enmap();
@@ -22,7 +23,7 @@ client.serverConfig = new Enmap({provider: new EnmapLevel({name: "serverConfig"}
 
 client.on("ready",() => {
   console.log(chalk.bgCyan.black(`Online and active on ${client.guilds.size} servers.`));
-  client.user.setActivity(client.config.prefix + 'help', {type: 'WATCHING'});
+  client.user.setActivity(client.config.prefix + "help", {type: 'WATCHING'});
 });
 
 
