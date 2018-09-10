@@ -16,7 +16,8 @@ module.exports = (client, message) => {
   const level = client.permLevel(message)
   
   // If the message is just "?", ignore it
-  if (!command) return;
+  const isOnlyPrefix = /^[?]+$/.test(command);
+  if (isOnlyPrefix == true) return;
   
   // Grab the command or alias data from the client.commands Collection
   const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
