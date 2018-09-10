@@ -1,5 +1,5 @@
 exports.run = (client, message, level) => {
-    message.reply("My master gave me this special invite link: " + client.config.inviteLink);
+    message.reply("My creator gave me this special invite link: " + client.config.inviteLink);
 };
 
 exports.conf = {
@@ -10,6 +10,6 @@ exports.conf = {
 
 exports.help ={
     name: 'invite',
-    description: 'Get my master\'s secret invite link...',
+    description: 'Get my creator\'s secret invite link...',
     usage: 'invite'
 };
