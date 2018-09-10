@@ -1,26 +1,34 @@
 exports.run = (client, message, level) => {
-
+  
+  const readdir = promisify(require("fs").readdir);
+  
+  const commandList = await readdir("./");
+  
   message.channel.send({embed: {
     color: 0xf29837,
-    title: `Hamtoro Bot »|« Release ${client.config.version} [ALPHA]`,
-    description: "High-Fox",
+    title: `${client.config.botName} | Release ${client.config.version}`,
+    description: "Join my home base [here!](https://discord.gg/dsrRtwZ)",
     fields: [{
         name: "Developer:",
-        value: "High-Fox"
+        value: "High-Fox",
+        inline: true
       },
       {
         name: "Library:",
-        value: "Discord.js"
+        value: "Discord.js",
+        inline: true
       },
       {
-        name: "My server!",
-        value: "INSERT SERVER LINK HERE"
-      }
+        name: "Commands:",
+        value: `${commandList.length}`
+      }          
     ],
+    thumbnail: {
+      url: client.user.avatarURL
+    },
     footer: {
-      icon_url: client.user.avatarURL,
+      avatar_url: "http://hamtaro-api.herokuapp.com/assets/images/profile_hd.jpg",
       text: "© High-Fox 2018"
-    }
   }
 })
 };
