@@ -1,5 +1,7 @@
 const config = {
   
+  "botName": "Logan",
+  
   // The following can not be changed by users:
   "ownerID": "428783792275193868",
   
