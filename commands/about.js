@@ -1,4 +1,4 @@
-exports.run = (client, message, level) => {
+exports.run = async (client, message, level) => {
   
   const readdir = promisify(require("fs").readdir);
   
