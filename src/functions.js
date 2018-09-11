@@ -41,18 +41,6 @@ module.exports = (client) => {
   client.loadCommand = (commandName) => {
     try {
       const props = require(`../commands/${commandName}`);
-      const isNewCommand = client.commandList.includes(props.help.name) ? "true" : "false";
-      
-      // Send message to every guild when a new command is added
-      if (isNewCommand == "true") {
-       client.guilds.forEach((guild) => {
-        const firstTextChannel = client.getDefaultChannel(guild);
-         
-        firstTextChannel.send( { embed: { title: "Notice of new command!", color: 0xf29837, fields: [{ name: "Name:", value: `${props.help.name}`, inline: true }, { name: "Description:", value: `${props.help.description}`, inline: true } ], } } );
-        console.log(`All guilds notified of new command: ${props.help.name}`);
-        client.commandList.push(props.help.name);
-       })
-      };
       
       console.log(`Loading Command: ${props.help.name}`);
       if (props.init) {
