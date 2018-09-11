@@ -33,8 +33,9 @@ exports.run = async (client, message, level) => {
     footer: {
       avatar_url: "http://hamtaro-api.herokuapp.com/assets/images/profile_hd.jpg",
       text: `${client.config.botName} © High-Fox 2018`
-  }
-})
+    }
+   }
+ })
 };
 
 exports.conf = {
