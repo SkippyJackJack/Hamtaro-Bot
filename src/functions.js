@@ -17,7 +17,7 @@ module.exports = (client) => {
   };
   
   client.getGuildSettings = async (guild) => {
-    const def = client.serverConfig.defaultConfig;
+    const def = client.config.defaultConfig;
     if (!guild) return def;
     const returns = {};
     const overrides = client.serverConfig.get(guild.id) || {};
@@ -56,19 +56,26 @@ module.exports = (client) => {
     }
   };
 
-  client.unloadCommand = async (commandName) => {
+  client.unloadCommand = async (command) => {
     let command;
-    if (client.commands.has(commandName)) {
-      command = client.commands.get(commandName);
-    } else if (client.aliases.has(commandName)) {
-      command = client.commands.get(client.aliases.get(commandName));
+    if (client.commands.has(command)) {
+      command = client.commands.get(command);
+    } else if (client.aliases.has(command)) {
+      command = client.commands.get(client.aliases.get(command));
     }
-    if (!command) return `The command \`${commandName}\` doesn"t seem to exist, nor is it an alias.`;
+    if (!command) return `The command \`${command}\` doesn"t seem to exist, nor is it an alias. Try again!`;
   
     if (command.shutdown) {
       await command.shutdown(client);
     }
-    delete require.cache[require.resolve(`../commands/${commandName}.js`)];
+    const mod = require.cache[require.resolve(`../commands/${command}`)];
+    delete require.cache[require.resolve(`../commands/${command}.js`)];
+    for (let i = 0; i < mod.parent.children.length; i++) {
+      if (mod.parent.children[i] === mod) {
+        mod.parent.children.splice(i, 1);
+        break;
+      }
+    }
     return false;
   };
   
