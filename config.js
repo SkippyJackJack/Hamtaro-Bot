@@ -21,6 +21,7 @@ const config = {
     "adminRole": "Admin",
     
     "unknownCommandNotice": "true",
+    "disabledCommandNotice": "true",
     
     "announceNewTextChannels": "true",
     "newTextChannelAnnouncementChannel": "general",
