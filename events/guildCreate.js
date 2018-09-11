@@ -14,20 +14,22 @@ const defaultChannel = client.getDefaultChannel(guild);
       description: "Use ?help to see my commands! ^-^",
       fields: [
           {
-              name: '**My Master:**',
-              value: 'HighFox'
+              name: '**My Creator:**',
+              value: '[High-Fox](https://github.com/High-Fox/)'
           },     
           {
               name: 'My Code:',
-              value: '[GitHub Source Code](https://github.com/High-Fox/Hamtoro-Bot/)'
+              value: '[GitHub Source Code](https://github.com/High-Fox/Logan-Bot/)',
+              inline: true
           },
           {
-              name: 'My Home:',
-              value: '[INSERT SERVER LINK HERE]'
+              name: 'Join my server:',
+              value: 'https://discord.gg/dsrRtwZ',
+              inline: true
           } 
       ],
       footer: {
-          text: 'Hamtaro Bot © High-Fox 2018'
+          text: `${client.config.botName} © High-Fox 2018`
       }
     }
   })
