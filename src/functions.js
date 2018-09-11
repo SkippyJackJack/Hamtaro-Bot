@@ -56,20 +56,20 @@ module.exports = (client) => {
     }
   };
 
-  client.unloadCommand = async (command) => {
+  client.unloadCommand = async (commandName) => {
     let command;
-    if (client.commands.has(command)) {
-      command = client.commands.get(command);
-    } else if (client.aliases.has(command)) {
-      command = client.commands.get(client.aliases.get(command));
+    if (client.commands.has(commandName)) {
+      command = client.commands.get(commandName);
+    } else if (client.aliases.has(commandName)) {
+      command = client.commands.get(client.aliases.get(commandName));
     }
-    if (!command) return `The command \`${command}\` doesn"t seem to exist, nor is it an alias. Try again!`;
+    if (!command) return `The command \`${commandName}\` doesn"t seem to exist, nor is it an alias. Try again!`;
   
     if (command.shutdown) {
       await command.shutdown(client);
     }
-    const mod = require.cache[require.resolve(`../commands/${command}`)];
-    delete require.cache[require.resolve(`../commands/${command}.js`)];
+    const mod = require.cache[require.resolve(`../commands/${commandName}`)];
+    delete require.cache[require.resolve(`../commands/${commandName}.js`)];
     for (let i = 0; i < mod.parent.children.length; i++) {
       if (mod.parent.children[i] === mod) {
         mod.parent.children.splice(i, 1);
