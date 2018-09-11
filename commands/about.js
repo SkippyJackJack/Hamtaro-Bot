@@ -1,7 +1,7 @@
 exports.run = async (client, message, level) => {
   
   const fs = require("fs");
-  const commandList = await fs.readdir("./");
+  const commandList = await fs.readdir("./").catch(console.error);
   
   message.channel.send({embed: {
     color: 0xf29837,
