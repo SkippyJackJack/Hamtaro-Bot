@@ -1,5 +1,6 @@
 exports.run = async (client, message, level) => {
   
+  const fs = require("fs");
   const commandList = await fs.readdir("./");
   
   message.channel.send({embed: {
