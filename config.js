@@ -17,7 +17,7 @@ const config = {
   // Default server config
   "defaultConfig" : {
     
-    "modRole": "Mod",
+    "modRole": "Moderators",
     "adminRole": "Admin",
     
     "announceNewTextChannels": "true",
@@ -41,7 +41,7 @@ const config = {
     permLevels: [
       
     // This is the lowest permisison level, this is for non-roled users.
-    { level: 0,
+    { level: 1,
       name: "User", 
       check: () => true
     },
@@ -79,20 +79,20 @@ const config = {
 
     // Bot Support is a special inbetween level that has the equivalent of server owner access
     // to any server they joins, in order to help troubleshoot the bot on behalf of owners.
-    { level: 8,
+    { level: 5,
       name: "Bot Support",
       check: (message) => config.support.includes(message.author.id)
     },
 
     // Bot Admin has some limited access like rebooting the bot or reloading commands.
-    { level: 9,
+    { level: 6,
       name: "Bot Admin",
       check: (message) => config.admins.includes(message.author.id)
     },
     
     // Bot's owner. Only the Bot's owner should have this as it gives access to potentially
     // dangerous commands such as ?eval
-    { level: 10,
+    { level: 7,
       name: "Bot Owner", 
       check: (message) => message.client.config.ownerID === message.author.id
     }
