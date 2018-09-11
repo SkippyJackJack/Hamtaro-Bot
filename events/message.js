@@ -16,6 +16,7 @@ module.exports = (client, message) => {
   const level = client.permLevel(message)
   
   // If the message is just "?", ignore it
+  if (!command) return;
   const isOnlyPrefix = /^[?]+$/.test(command);
   if (isOnlyPrefix == true) return;
   
@@ -23,7 +24,13 @@ module.exports = (client, message) => {
   const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
   // If that command doesn't exist send message
-  if (!cmd) return message.channel.send("I-I don't recognise that command!");
+  if (!cmd) {
+    if (message.serverConfig.unknownCommandNotice == "true") {
+      return message.channel.send("I-I don't recognise that command!");
+    } else {
+      return;
+    }
+  }
 
   // Get the command's requires perm level, and check if the user has that perm level
   if (level < client.levelCache[cmd.conf.permLevel]) {
@@ -41,8 +48,10 @@ module.exports = (client, message) => {
    // If the command exists, **AND** the user has permission, run it
    if (cmd.conf.enabled == true) {
      cmd.run(client, message, args, level);
-   } else {
+   } else if (message.serverConfig.disabledCommandNotice == "true") {
      message.channel.send("That command has been temporarily disabled, and will be available soon. Sorry for the inconvenience! ^-^");
+   } else {
+     return;
    }
   
  };
