@@ -20,6 +20,8 @@ const config = {
     "modRole": "Moderators",
     "adminRole": "Admin",
     
+    "unknownCommandNotice": "true",
+    
     "announceNewTextChannels": "true",
     "newTextChannelAnnouncementChannel": "general",
     "newTextChannelAnnouncement": "The text channel {{channel}} was just created!",
