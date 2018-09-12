@@ -25,7 +25,7 @@ module.exports = (client, message) => {
 
   // If that command doesn't exist send message
   if (!cmd) {
-    if (message.serverConfig.unknownCommandNotice == "true") {
+    if (serverConfig.unknownCommandNotice == "true") {
       return message.channel.send("I-I don't recognise that command!");
     } else {
       return;
@@ -48,7 +48,7 @@ module.exports = (client, message) => {
    // If the command exists, **AND** the user has permission, run it
    if (cmd.conf.enabled == true) {
      cmd.run(client, message, args, level);
-   } else if (message.serverConfig.disabledCommandNotice == "true") {
+   } else if (serverConfig.disabledCommandNotice == "true") {
      message.channel.send("That command has been temporarily disabled, and will be available soon. Sorry for the inconvenience! ^-^");
    } else {
      return;
