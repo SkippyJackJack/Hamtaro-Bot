@@ -36,7 +36,7 @@ exports.run = async (client, message, [action, key, ...value], level) => {
     if (!overrides[key]) return message.reply("This key does not have an override and is already using defaults.");
     
     // Good demonstration of the custom awaitReply method in `./modules/functions.js` !
-    const response = await client.awaitReply(message, `Are you sure you want to reset ${key} to the default value? **Respond with Yes or No**`);
+    const response = await client.awaitReply(message, `Are you sure you want to reset ${key} to the default value?`);
 
     // If they respond with y or yes, continue.
     if (["y", "yes"].includes(response.toLowerCase())) {
@@ -70,5 +70,5 @@ exports.conf = {
 exports.help = {
   name: "setconf",
   description: "View or change settings for your server.",
-  usage: "setconf [view/edit/reset] <key> <value>"
+  usage: "conf [view/edit/reset] <key> <value>"
 };
