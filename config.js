@@ -45,14 +45,14 @@ const config = {
       
     // This is the lowest permisison level, this is for non-roled users.
     { level: 1,
-      name: "User", 
+      name: "Public", 
       check: () => true
     },
 
     // This is your permission level, the staff levels should always be above the rest of the roles.
     { level: 2,
       // This is the name of the role.
-      name: "Moderator",
+      name: "Member",
       check: (message) => {
         try {
           const modRole = message.guild.roles.find(r => r.name.toLowerCase() === message.serverConfig.modRole.toLowerCase());
@@ -64,7 +64,7 @@ const config = {
     },
 
     { level: 3,
-      name: "Administrator", 
+      name: "Member+", 
       check: (message) => {
         try {
           const adminRole = message.guild.roles.find(r => r.name.toLowerCase() === message.serverConfig.adminRole.toLowerCase());
@@ -76,7 +76,7 @@ const config = {
     },
     // This is the server owner.
     { level: 4,
-      name: "Server Owner", 
+      name: "Moderator", 
       check: (message) => message.channel.type === "text" ? (message.guild.ownerID === message.author.id ? true : false) : false
     },
 
@@ -89,7 +89,7 @@ const config = {
 
     // Bot Admin has some limited access like rebooting the bot or reloading commands.
     { level: 6,
-      name: "Bot Admin",
+      name: "Server Owner",
       check: (message) => config.admins.includes(message.author.id)
     },
     
