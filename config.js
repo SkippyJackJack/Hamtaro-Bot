@@ -45,14 +45,14 @@ const config = {
       
     // This is the lowest permisison level, this is for non-roled users.
     { level: 1,
-      name: "User", 
+      name: "Public", 
       check: () => true
     },
 
     // This is your permission level, the staff levels should always be above the rest of the roles.
     { level: 2,
       // This is the name of the role.
-      name: "Moderator",
+      name: "Guest",
       check: (message) => {
         try {
           const modRole = message.guild.roles.find(r => r.name.toLowerCase() === message.serverConfig.modRole.toLowerCase());
@@ -64,7 +64,7 @@ const config = {
     },
 
     { level: 3,
-      name: "Administrator", 
+      name: "Member", 
       check: (message) => {
         try {
           const adminRole = message.guild.roles.find(r => r.name.toLowerCase() === message.serverConfig.adminRole.toLowerCase());
@@ -76,27 +76,27 @@ const config = {
     },
     // This is the server owner.
     { level: 4,
-      name: "Server Owner", 
+      name: "VIP", 
       check: (message) => message.channel.type === "text" ? (message.guild.ownerID === message.author.id ? true : false) : false
     },
 
     // Bot Support is a special inbetween level that has the equivalent of server owner access
     // to any server they joins, in order to help troubleshoot the bot on behalf of owners.
     { level: 5,
-      name: "Bot Support",
+      name: "Moderator",
       check: (message) => config.support.includes(message.author.id)
     },
 
     // Bot Admin has some limited access like rebooting the bot or reloading commands.
     { level: 6,
-      name: "Bot Admin",
+      name: "Server Owner",
       check: (message) => config.admins.includes(message.author.id)
     },
     
     // Bot's owner. Only the Bot's owner should have this as it gives access to potentially
     // dangerous commands such as ?eval
     { level: 7,
-      name: "Bot Owner", 
+      name: "Glorious and Holy Leader, Mr Cowley", 
       check: (message) => message.client.config.ownerID === message.author.id
     }
   ]
