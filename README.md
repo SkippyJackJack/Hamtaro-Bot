@@ -1,10 +1,10 @@
-# Hamtaro-Bot 
-An adorable little hamster for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+# Logan-Bot 
+An adorable little Logan for you Discord Server! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 > #### Invite me [here!](https://discordapp.com/oauth2/authorize?client_id=470864521842655252&scope=bot)
 
 ---
 
-##### Submit issues and bugs [here.](https://github.com/High-Fox/Hamtaro-Bot/issues)
+##### Submit issues and bugs [here.](https://github.com/High-Fox/Logan-Bot/issues)
 ###### Created by [High-Fox](https://github.com/High-Fox/)
 
 ---
@@ -53,5 +53,5 @@ These are the key names you can change or view with `?setconf [view/edit/reset] 
 * Adorable random image commands to lighten up the mood and make you go *awwwww!* ヽ(^◇^*)/
 * A decision maker to help settle an argument or a hard choice to be made.
 * Create your own memes for laughs!
-* Customizable settings to make your Hamtaro Bot unique to your server!
+* Customizable settings to make your Logan unique to your server!
   
