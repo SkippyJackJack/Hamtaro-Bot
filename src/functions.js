@@ -16,7 +16,7 @@ module.exports = (client) => {
     return permlvl;
   };
   
-  client.getGuildSettings = async (guild) => {
+  client.getGuildSettings = (guild) => {
     const def = client.config.defaultConfig;
     if (!guild) return def;
     const returns = {};
